@@ -1,6 +1,9 @@
 import cv2
 import numpy as np
+from .processing import norm
 
+
+### filtering
 def get_hamming_filter(image,r):
     """
     image: (w,h)
@@ -32,9 +35,8 @@ def get_hamming_filter(image,r):
     filtered_image = np.abs(inv_image)  # remove negative
     # shift lowest val to zero and max val to 255
     filtered_image = (filtered_image-np.min(filtered_image)) / np.max(filtered_image) * 255
+
     return filtered_image.astype(np.uint8)
-
-
 
 def db2mag(ydb):
     """ follows the formula from matlab
@@ -54,14 +56,12 @@ def get_average_filter(image, r):
     r: int
         larger r produces stronger filtering
     output:
-        blurred image, still in same format as source
+        blurred image, normalized in each plane and converted to uint8
     """
     image = db2mag(image)
     image = cv2.blur(image, (r,r))
     image = mag2db(image)
-    return image
-
-
+    return norm(image)
 
 def filter_image(filter, image, r):
     if filter=='average':

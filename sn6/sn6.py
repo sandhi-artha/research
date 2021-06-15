@@ -33,6 +33,7 @@ def _int64_feature(value):
 
 
 
+### main
 class Sn6Create():
     def __init__(self, ds_path,
                  split_path=None,
@@ -65,8 +66,8 @@ class Sn6Create():
             also decides order. If not provided, will use all 4ch in default order
         
         filter : str, default: None
-            filter the image or not, correct values:
-            'average', 'hamming'
+            method of filtering. options: 'average', 'hamming'
+            filter is only possible if crop is True
 
         r : int, default: 0
             filter strength
@@ -75,6 +76,10 @@ class Sn6Create():
             if True, 1 tile will result in 2 images where the NoData region (black parts)
             are cropped. Cropping forces resolution output to (512,512)
         """
+        if filter=='hamming' and not crop:
+            raise ValueError('crop should be True if using hamming filter')
+            
+        
         self.path = ds_path
         self.mode = mode
         self.sar_ch = sar_ch
@@ -177,7 +182,7 @@ class Sn6Create():
             return [image1, image2]
 
         else:
-            if self.mode == 'SAR-Intensity':
+            if self.mode == 'SAR-Intensity' and self.r == 0:
                 image = norm(image)
             
             if self.r > 0:
@@ -203,7 +208,6 @@ class Sn6Create():
 
         if self.crop:
             row0,row1,col0,col1 = get_region_index(raster)  # windowing
-
             # prepare mask ROI
             mask = mask[row0:row1,col0:col1]
 
@@ -219,7 +223,6 @@ class Sn6Create():
             else:
                 image = raster.read(out_dtype='uint8', out_shape=self.image_size)
 
-        
         masks = self.get_mask_string(mask, image_id)        # list of mask (1 if crop=False, 2 if True)
         images = self.get_image_string(image)
 
@@ -228,10 +231,10 @@ class Sn6Create():
 
 
 
-    def create_tfrecord_crop(self):
+    def create_tfrecord(self):
         print(f'using {self.image_size[0]}x{self.image_size[0]} resolution on {self.mode} images')
 
-        ni = 1 if self.crop else 2  # number of images per tile
+        ni = 2 if self.crop else 1  # number of images per tile
 
         # create tfrecords for each split
         for n, image_set in enumerate(self.split_set):
@@ -254,3 +257,27 @@ class Sn6Create():
                     
                     if k%50==0:
                         print(f'split {n+1}: {k}')
+                        
+                        
+    def create_tfrecord_test(self):
+        print(f'Test mode, using {self.image_size[0]}x{self.image_size[0]} resolution on 4 images')
+        ni = 2 if self.crop else 1  # number of images per tile
+
+        for n, image_set in enumerate(self.split_set):
+            fn = f'split{n+1}-{ni*4}.tfrec'
+            with tf.io.TFRecordWriter(fn) as writer:
+                for k,image_id in enumerate(image_set):
+                    image_str, mask_str = self.get_image_mask(image_id)
+                    print(ni)
+                    for i in range(ni):
+                        feature={
+                            'image': _bytes_feature(image_str[i]),
+                            'mask': _bytes_feature(mask_str[i]),
+                            'file_name': _bytes_feature(tf.compat.as_bytes(f'{image_id}_{i}'))
+                        }
+                        # write tfrecords
+                        example = tf.train.Example(features=tf.train.Features(feature=feature))
+                        writer.write(example.SerializeToString())
+                    if k==3:
+                        break
+            break
