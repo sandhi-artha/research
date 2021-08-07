@@ -30,6 +30,7 @@ def _bytes_feature(value):
 def encode_mask(mask, resize):
     mask = mask.astype(np.uint8)
     mask = np.expand_dims(mask, axis=-1)
+    mask = tf.image.resize(mask, (resize,resize), method='nearest')
     return tf.io.encode_png(mask)
 
 def encode_image(image, resize):
@@ -49,12 +50,12 @@ print(f'using multi-look filter: {filt}, and resize to: {resize}x{resize}')
 print('reading acquisition dates')
 with open('acq_dates.txt') as f:
     acq_list = f.readlines()
+
 # cleaning
 acq_list = [acq.split('.')[0] for acq in acq_list]
 print(f'found total: {len(acq_list)}')
 
 # try 1 first
-acq_list = [acq_list[0]]
 # acq_list = ['20190823162315_20190823162606']
 
 pr_slc_dir = '../../processed'
@@ -71,6 +72,9 @@ out_dir = f'../../tfrec{resize}_f{filt}'
 
 
 for na, acq in enumerate(acq_list):
+    if na==137:  # problem with 20190823081648_20190823081959, bcz it has different res for its 4 POL
+        continue
+
     print(f'preparing: stripe {na} out of {len(acq_list)}..')
     # 1. prepare the 3 ingredients
     pr_slc_path = f'{pr_slc_dir}/SLC_POL_{acq}_f{filt}.tif'

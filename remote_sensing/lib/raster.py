@@ -8,6 +8,7 @@ from PIL import Image
 
 
 def read_slc(path):
+    Image.MAX_IMAGE_PIXELS = None  # surprass the DecompressionBombWarning
     slc = Image.open(path, 'r')
     slc = np.array(slc, dtype=np.uint8)
     # slc = rs.open(path)
