@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 from PIL import Image
+import time
 
 import rasterio as rs
 from rasterio import plot
@@ -39,7 +40,7 @@ def encode_image(image, resize):
 
 
 # USER DATA
-filt = 2
+filt = 4
 resize = 640
 print(f'using multi-look filter: {filt}, and resize to: {resize}x{resize}')
 
@@ -70,7 +71,7 @@ out_dir = f'../../tfrec{resize}_f{filt}'
 
 
 
-
+start = time.time()
 for na, acq in enumerate(acq_list):
     if na==137:  # problem with 20190823081648_20190823081959, bcz it has different res for its 4 POL
         continue
@@ -141,4 +142,6 @@ for na, acq in enumerate(acq_list):
     #     if not(os.path.isfile(fn_mask)):  # check if file doesn't exist, create it
     #         ex_mask = Image.fromarray(ex_mask)
     #         ex_mask.save(fn_mask)
-        
+    
+end = time.time()
+print(f'total processeing time: {(end-start):.2f}')
