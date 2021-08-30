@@ -1,0 +1,2018 @@
+Test log
+Start job: 12-Aug-2021 13:15:51
+stripe 155 from 203
+f8..
+HH..  ML2D, elapsed time = 340 [sec]
+HV..  ML2D, elapsed time = 343 [sec]
+VH..  ML2D, elapsed time = 339 [sec]
+VV..  ML2D, elapsed time = 342 [sec]
+saving image..
+saving stats..
+stripe 156 from 203
+f8..
+HH..  ML2D, elapsed time = 378 [sec]
+HV..  ML2D, elapsed time = 379 [sec]
+VH..  ML2D, elapsed time = 376 [sec]
+VV..  ML2D, elapsed time = 374 [sec]
+saving image..
+saving stats..
+stripe 157 from 203
+f8..
+HH..  ML2D, elapsed time = 360 [sec]
+HV..  ML2D, elapsed time = 360 [sec]
+VH..  ML2D, elapsed time = 358 [sec]
+VV..  ML2D, elapsed time = 361 [sec]
+saving image..
+saving stats..
+stripe 158 from 203
+f8..
+HH..  ML2D, elapsed time = 327 [sec]
+HV..  ML2D, elapsed time = 333 [sec]
+VH..  ML2D, elapsed time = 326 [sec]
+VV..  ML2D, elapsed time = 334 [sec]
+saving image..
+saving stats..
+stripe 159 from 203
+f8..
+HH..  ML2D, elapsed time = 353 [sec]
+HV..  ML2D, elapsed time = 351 [sec]
+VH..  ML2D, elapsed time = 353 [sec]
+VV..  ML2D, elapsed time = 356 [sec]
+saving image..
+saving stats..
+stripe 160 from 203
+f8..
+HH..  ML2D, elapsed time = 349 [sec]
+HV..  ML2D, elapsed time = 345 [sec]
+VH..  ML2D, elapsed time = 347 [sec]
+VV..  ML2D, elapsed time = 345 [sec]
+saving image..
+saving stats..
+stripe 161 from 203
+f8..
+HH..  ML2D, elapsed time = 356 [sec]
+HV..  ML2D, elapsed time = 355 [sec]
+VH..  ML2D, elapsed time = 357 [sec]
+VV..  ML2D, elapsed time = 360 [sec]
+saving image..
+saving stats..
+stripe 162 from 203
+f8..
+HH..  ML2D, elapsed time = 359 [sec]
+HV..  ML2D, elapsed time = 365 [sec]
+VH..  ML2D, elapsed time = 360 [sec]
+VV..  ML2D, elapsed time = 360 [sec]
+saving image..
+saving stats..
+stripe 163 from 203
+f8..
+HH..  ML2D, elapsed time = 352 [sec]
+HV..  ML2D, elapsed time = 350 [sec]
+VH..  ML2D, elapsed time = 355 [sec]
+VV..  ML2D, elapsed time = 351 [sec]
+saving image..
+saving stats..
+stripe 164 from 203
+f8..
+HH..  ML2D, elapsed time = 345 [sec]
+HV..  ML2D, elapsed time = 344 [sec]
+VH..  ML2D, elapsed time = 341 [sec]
+VV..  ML2D, elapsed time = 341 [sec]
+saving image..
+saving stats..
+stripe 165 from 203
+f8..
+HH..  ML2D, elapsed time = 345 [sec]
+HV..  ML2D, elapsed time = 343 [sec]
+VH..  ML2D, elapsed time = 342 [sec]
+VV..  ML2D, elapsed time = 343 [sec]
+saving image..
+saving stats..
+stripe 166 from 203
+f8..
+HH..  ML2D, elapsed time = 346 [sec]
+HV..  ML2D, elapsed time = 345 [sec]
+VH..  ML2D, elapsed time = 347 [sec]
+VV..  ML2D, elapsed time = 347 [sec]
+saving image..
+saving stats..
+stripe 167 from 203
+f8..
+HH..  ML2D, elapsed time = 347 [sec]
+HV..  ML2D, elapsed time = 345 [sec]
+VH..  ML2D, elapsed time = 350 [sec]
+VV..  ML2D, elapsed time = 355 [sec]
+saving image..
+saving stats..
+stripe 168 from 203
+f8..
+HH..  ML2D, elapsed time = 350 [sec]
+HV..  ML2D, elapsed time = 358 [sec]
+VH..  ML2D, elapsed time = 362 [sec]
+VV..  ML2D, elapsed time = 364 [sec]
+saving image..
+saving stats..
+stripe 169 from 203
+f8..
+HH..  ML2D, elapsed time = 357 [sec]
+HV..  ML2D, elapsed time = 368 [sec]
+VH..  ML2D, elapsed time = 371 [sec]
+VV..  ML2D, elapsed time = 370 [sec]
+saving image..
+saving stats..
+stripe 170 from 203
+f8..
+HH..  ML2D, elapsed time = 370 [sec]
+HV..  ML2D, elapsed time = 368 [sec]
+VH..  ML2D, elapsed time = 369 [sec]
+VV..  ML2D, elapsed time = 365 [sec]
+saving image..
+saving stats..
+stripe 171 from 203
+f8..
+HH..  ML2D, elapsed time = 393 [sec]
+HV..  ML2D, elapsed time = 397 [sec]
+VH..  ML2D, elapsed time = 396 [sec]
+VV..  ML2D, elapsed time = 396 [sec]
+saving image..
+saving stats..
+stripe 172 from 203
+f8..
+HH..  ML2D, elapsed time = 382 [sec]
+HV..  ML2D, elapsed time = 380 [sec]
+VH..  ML2D, elapsed time = 387 [sec]
+VV..  ML2D, elapsed time = 390 [sec]
+saving image..
+saving stats..
+stripe 173 from 203
+f8..
+HH..  ML2D, elapsed time = 388 [sec]
+HV..  ML2D, elapsed time = 384 [sec]
+VH..  ML2D, elapsed time = 384 [sec]
+VV..  ML2D, elapsed time = 384 [sec]
+saving image..
+saving stats..
+stripe 174 from 203
+f8..
+HH..  ML2D, elapsed time = 395 [sec]
+HV..  ML2D, elapsed time = 393 [sec]
+VH..  ML2D, elapsed time = 393 [sec]
+VV..  ML2D, elapsed time = 393 [sec]
+saving image..
+saving stats..
+stripe 175 from 203
+f8..
+HH..  ML2D, elapsed time = 383 [sec]
+HV..  ML2D, elapsed time = 382 [sec]
+VH..  ML2D, elapsed time = 383 [sec]
+VV..  ML2D, elapsed time = 382 [sec]
+saving image..
+saving stats..
+stripe 176 from 203
+f8..
+HH..  ML2D, elapsed time = 380 [sec]
+HV..  ML2D, elapsed time = 380 [sec]
+VH..  ML2D, elapsed time = 379 [sec]
+VV..  ML2D, elapsed time = 391 [sec]
+saving image..
+saving stats..
+stripe 177 from 203
+f8..
+HH..  ML2D, elapsed time = 395 [sec]
+HV..  ML2D, elapsed time = 381 [sec]
+VH..  ML2D, elapsed time = 384 [sec]
+VV..  ML2D, elapsed time = 400 [sec]
+saving image..
+saving stats..
+stripe 178 from 203
+f8..
+HH..  ML2D, elapsed time = 381 [sec]
+HV..  ML2D, elapsed time = 378 [sec]
+VH..  ML2D, elapsed time = 381 [sec]
+VV..  ML2D, elapsed time = 374 [sec]
+saving image..
+saving stats..
+stripe 179 from 203
+f8..
+HH..  ML2D, elapsed time = 386 [sec]
+HV..  ML2D, elapsed time = 408 [sec]
+VH..  ML2D, elapsed time = 425 [sec]
+VV..  ML2D, elapsed time = 434 [sec]
+saving image..
+saving stats..
+stripe 180 from 203
+f8..
+HH..  ML2D, elapsed time = 424 [sec]
+HV..  ML2D, elapsed time = 430 [sec]
+VH..  ML2D, elapsed time = 427 [sec]
+VV..  ML2D, elapsed time = 435 [sec]
+saving image..
+saving stats..
+stripe 181 from 203
+f8..
+HH..  ML2D, elapsed time = 387 [sec]
+HV..  ML2D, elapsed time = 384 [sec]
+VH..  ML2D, elapsed time = 386 [sec]
+VV..  ML2D, elapsed time = 384 [sec]
+saving image..
+saving stats..
+stripe 182 from 203
+f8..
+HH..  ML2D, elapsed time = 382 [sec]
+HV..  ML2D, elapsed time = 383 [sec]
+VH..  ML2D, elapsed time = 385 [sec]
+VV..  ML2D, elapsed time = 387 [sec]
+saving image..
+saving stats..
+stripe 183 from 203
+f8..
+HH..  ML2D, elapsed time = 359 [sec]
+HV..  ML2D, elapsed time = 354 [sec]
+VH..  ML2D, elapsed time = 350 [sec]
+VV..  ML2D, elapsed time = 351 [sec]
+saving image..
+saving stats..
+stripe 184 from 203
+f8..
+HH..  ML2D, elapsed time = 347 [sec]
+HV..  ML2D, elapsed time = 344 [sec]
+VH..  ML2D, elapsed time = 346 [sec]
+VV..  ML2D, elapsed time = 342 [sec]
+saving image..
+saving stats..
+stripe 185 from 203
+f8..
+HH..  ML2D, elapsed time = 379 [sec]
+HV..  ML2D, elapsed time = 382 [sec]
+VH..  ML2D, elapsed time = 379 [sec]
+VV..  ML2D, elapsed time = 384 [sec]
+saving image..
+saving stats..
+stripe 186 from 203
+f8..
+HH..  ML2D, elapsed time = 379 [sec]
+HV..  ML2D, elapsed time = 375 [sec]
+VH..  ML2D, elapsed time = 374 [sec]
+VV..  ML2D, elapsed time = 379 [sec]
+saving image..
+saving stats..
+stripe 187 from 203
+f8..
+HH..  ML2D, elapsed time = 394 [sec]
+HV..  ML2D, elapsed time = 394 [sec]
+VH..  ML2D, elapsed time = 395 [sec]
+VV..  ML2D, elapsed time = 396 [sec]
+saving image..
+saving stats..
+stripe 188 from 203
+f8..
+HH..  ML2D, elapsed time = 364 [sec]
+HV..  ML2D, elapsed time = 373 [sec]
+VH..  ML2D, elapsed time = 361 [sec]
+VV..  ML2D, elapsed time = 362 [sec]
+saving image..
+saving stats..
+stripe 189 from 203
+f8..
+HH..  ML2D, elapsed time = 371 [sec]
+HV..  ML2D, elapsed time = 371 [sec]
+VH..  ML2D, elapsed time = 373 [sec]
+VV..  ML2D, elapsed time = 370 [sec]
+saving image..
+saving stats..
+stripe 190 from 203
+f8..
+HH..  ML2D, elapsed time = 343 [sec]
+HV..  ML2D, elapsed time = 347 [sec]
+VH..  ML2D, elapsed time = 350 [sec]
+VV..  ML2D, elapsed time = 347 [sec]
+saving image..
+saving stats..
+stripe 191 from 203
+f8..
+HH..  ML2D, elapsed time = 390 [sec]
+HV..  ML2D, elapsed time = 387 [sec]
+VH..  ML2D, elapsed time = 392 [sec]
+VV..  ML2D, elapsed time = 392 [sec]
+saving image..
+saving stats..
+stripe 192 from 203
+f8..
+HH..  ML2D, elapsed time = 368 [sec]
+HV..  ML2D, elapsed time = 371 [sec]
+VH..  ML2D, elapsed time = 367 [sec]
+VV..  ML2D, elapsed time = 374 [sec]
+saving image..
+saving stats..
+stripe 193 from 203
+f8..
+HH..  ML2D, elapsed time = 375 [sec]
+HV..  ML2D, elapsed time = 378 [sec]
+VH..  ML2D, elapsed time = 377 [sec]
+VV..  ML2D, elapsed time = 376 [sec]
+saving image..
+saving stats..
+stripe 194 from 203
+f8..
+HH..  ML2D, elapsed time = 378 [sec]
+HV..  ML2D, elapsed time = 377 [sec]
+VH..  ML2D, elapsed time = 373 [sec]
+VV..  ML2D, elapsed time = 376 [sec]
+saving image..
+saving stats..
+stripe 195 from 203
+f8..
+HH..  ML2D, elapsed time = 348 [sec]
+HV..  ML2D, elapsed time = 349 [sec]
+VH..  ML2D, elapsed time = 353 [sec]
+VV..  ML2D, elapsed time = 352 [sec]
+saving image..
+saving stats..
+stripe 196 from 203
+f8..
+HH..  ML2D, elapsed time = 362 [sec]
+HV..  ML2D, elapsed time = 365 [sec]
+VH..  ML2D, elapsed time = 364 [sec]
+VV..  ML2D, elapsed time = 361 [sec]
+saving image..
+saving stats..
+stripe 197 from 203
+f8..
+HH..  ML2D, elapsed time = 379 [sec]
+HV..  ML2D, elapsed time = 445 [sec]
+VH..  ML2D, elapsed time = 498 [sec]
+VV..  ML2D, elapsed time = 465 [sec]
+saving image..
+saving stats..
+stripe 198 from 203
+f8..
+HH..  ML2D, elapsed time = 449 [sec]
+HV..  ML2D, elapsed time = 492 [sec]
+VH..  ML2D, elapsed time = 464 [sec]
+VV..  ML2D, elapsed time = 392 [sec]
+saving image..
+saving stats..
+stripe 199 from 203
+f8..
+HH..  ML2D, elapsed time = 395 [sec]
+HV..  ML2D, elapsed time = 388 [sec]
+VH..  ML2D, elapsed time = 387 [sec]
+VV..  ML2D, elapsed time = 385 [sec]
+saving image..
+saving stats..
+stripe 200 from 203
+f8..
+HH..  ML2D, elapsed time = 371 [sec]
+HV..  ML2D, elapsed time = 369 [sec]
+VH..  ML2D, elapsed time = 368 [sec]
+VV..  ML2D, elapsed time = 371 [sec]
+saving image..
+saving stats..
+stripe 201 from 203
+f8..
+HH..  ML2D, elapsed time = 368 [sec]
+HV..  ML2D, elapsed time = 377 [sec]
+VH..  ML2D, elapsed time = 372 [sec]
+VV..  ML2D, elapsed time = 373 [sec]
+saving image..
+saving stats..
+stripe 202 from 203
+f8..
+HH..  ML2D, elapsed time = 393 [sec]
+HV..  ML2D, elapsed time = 457 [sec]
+VH..  ML2D, elapsed time = 404 [sec]
+VV..  ML2D, elapsed time = 398 [sec]
+saving image..
+saving stats..
+stripe 203 from 203
+f8..
+HH..  ML2D, elapsed time = 368 [sec]
+HV..  ML2D, elapsed time = 363 [sec]
+VH..  ML2D, elapsed time = 362 [sec]
+VV..  ML2D, elapsed time = 363 [sec]
+saving image..
+saving stats..
+Total processing time: 75695.762997
+Start job: 16-Aug-2021 22:25:36
+stripe 1 from 203
+f6..
+HH..  ML2D, elapsed time = 146 [sec]
+HV..  ML2D, elapsed time = 142 [sec]
+VH..  ML2D, elapsed time = 144 [sec]
+VV..  ML2D, elapsed time = 144 [sec]
+saving image..
+saving stats..
+stripe 2 from 203
+f6..
+HH..  ML2D, elapsed time = 168 [sec]
+HV..  ML2D, elapsed time = 174 [sec]
+VH..  ML2D, elapsed time = 169 [sec]
+VV..  ML2D, elapsed time = 171 [sec]
+saving image..
+saving stats..
+stripe 3 from 203
+f6..
+HH..  ML2D, elapsed time = 147 [sec]
+HV..  ML2D, elapsed time = 148 [sec]
+VH..  ML2D, elapsed time = 149 [sec]
+VV..  ML2D, elapsed time = 149 [sec]
+saving image..
+saving stats..
+stripe 4 from 203
+f6..
+HH..  ML2D, elapsed time = 144 [sec]
+HV..  ML2D, elapsed time = 143 [sec]
+VH..  ML2D, elapsed time = 144 [sec]
+VV..  ML2D, elapsed time = 145 [sec]
+saving image..
+saving stats..
+stripe 5 from 203
+f6..
+HH..  ML2D, elapsed time = 143 [sec]
+HV..  ML2D, elapsed time = 143 [sec]
+VH..  ML2D, elapsed time = 143 [sec]
+VV..  ML2D, elapsed time = 141 [sec]
+saving image..
+saving stats..
+stripe 6 from 203
+f6..
+HH..  ML2D, elapsed time = 137 [sec]
+HV..  ML2D, elapsed time = 137 [sec]
+VH..  ML2D, elapsed time = 136 [sec]
+VV..  ML2D, elapsed time = 138 [sec]
+saving image..
+saving stats..
+stripe 7 from 203
+f6..
+HH..  ML2D, elapsed time = 146 [sec]
+HV..  ML2D, elapsed time = 144 [sec]
+VH..  ML2D, elapsed time = 145 [sec]
+VV..  ML2D, elapsed time = 147 [sec]
+saving image..
+saving stats..
+stripe 8 from 203
+f6..
+HH..  ML2D, elapsed time = 146 [sec]
+HV..  ML2D, elapsed time = 145 [sec]
+VH..  ML2D, elapsed time = 146 [sec]
+VV..  ML2D, elapsed time = 145 [sec]
+saving image..
+saving stats..
+stripe 9 from 203
+f6..
+HH..  ML2D, elapsed time = 148 [sec]
+HV..  ML2D, elapsed time = 149 [sec]
+VH..  ML2D, elapsed time = 153 [sec]
+VV..  ML2D, elapsed time = 154 [sec]
+saving image..
+saving stats..
+stripe 10 from 203
+f6..
+HH..  ML2D, elapsed time = 150 [sec]
+HV..  ML2D, elapsed time = 150 [sec]
+VH..  ML2D, elapsed time = 152 [sec]
+VV..  ML2D, elapsed time = 154 [sec]
+saving image..
+saving stats..
+stripe 11 from 203
+f6..
+HH..  ML2D, elapsed time = 168 [sec]
+HV..  ML2D, elapsed time = 167 [sec]
+VH..  ML2D, elapsed time = 170 [sec]
+VV..  ML2D, elapsed time = 170 [sec]
+saving image..
+saving stats..
+stripe 12 from 203
+f6..
+HH..  ML2D, elapsed time = 167 [sec]
+HV..  ML2D, elapsed time = 168 [sec]
+VH..  ML2D, elapsed time = 167 [sec]
+VV..  ML2D, elapsed time = 167 [sec]
+saving image..
+saving stats..
+stripe 13 from 203
+f6..
+HH..  ML2D, elapsed time = 165 [sec]
+HV..  ML2D, elapsed time = 165 [sec]
+VH..  ML2D, elapsed time = 164 [sec]
+VV..  ML2D, elapsed time = 167 [sec]
+saving image..
+saving stats..
+stripe 14 from 203
+f6..
+HH..  ML2D, elapsed time = 161 [sec]
+HV..  ML2D, elapsed time = 162 [sec]
+VH..  ML2D, elapsed time = 162 [sec]
+VV..  ML2D, elapsed time = 161 [sec]
+saving image..
+saving stats..
+stripe 15 from 203
+f6..
+HH..  ML2D, elapsed time = 164 [sec]
+HV..  ML2D, elapsed time = 160 [sec]
+VH..  ML2D, elapsed time = 165 [sec]
+VV..  ML2D, elapsed time = 163 [sec]
+saving image..
+saving stats..
+stripe 16 from 203
+f6..
+HH..  ML2D, elapsed time = 176 [sec]
+HV..  ML2D, elapsed time = 176 [sec]
+VH..  ML2D, elapsed time = 175 [sec]
+VV..  ML2D, elapsed time = 174 [sec]
+saving image..
+saving stats..
+stripe 17 from 203
+f6..
+HH..  ML2D, elapsed time = 184 [sec]
+HV..  ML2D, elapsed time = 185 [sec]
+VH..  ML2D, elapsed time = 183 [sec]
+VV..  ML2D, elapsed time = 186 [sec]
+saving image..
+saving stats..
+stripe 18 from 203
+f6..
+HH..  ML2D, elapsed time = 201 [sec]
+HV..  ML2D, elapsed time = 200 [sec]
+VH..  ML2D, elapsed time = 201 [sec]
+VV..  ML2D, elapsed time = 201 [sec]
+saving image..
+saving stats..
+stripe 19 from 203
+f6..
+HH..  ML2D, elapsed time = 162 [sec]
+HV..  ML2D, elapsed time = 165 [sec]
+VH..  ML2D, elapsed time = 163 [sec]
+VV..  ML2D, elapsed time = 163 [sec]
+saving image..
+saving stats..
+stripe 20 from 203
+f6..
+HH..  ML2D, elapsed time = 166 [sec]
+HV..  ML2D, elapsed time = 169 [sec]
+VH..  ML2D, elapsed time = 167 [sec]
+VV..  ML2D, elapsed time = 167 [sec]
+saving image..
+saving stats..
+stripe 21 from 203
+f6..
+HH..  ML2D, elapsed time = 176 [sec]
+HV..  ML2D, elapsed time = 176 [sec]
+VH..  ML2D, elapsed time = 178 [sec]
+VV..  ML2D, elapsed time = 179 [sec]
+saving image..
+saving stats..
+stripe 22 from 203
+f6..
+HH..  ML2D, elapsed time = 174 [sec]
+HV..  ML2D, elapsed time = 177 [sec]
+VH..  ML2D, elapsed time = 175 [sec]
+VV..  ML2D, elapsed time = 175 [sec]
+saving image..
+saving stats..
+stripe 23 from 203
+f6..
+HH..  ML2D, elapsed time = 175 [sec]
+HV..  ML2D, elapsed time = 174 [sec]
+VH..  ML2D, elapsed time = 176 [sec]
+VV..  ML2D, elapsed time = 173 [sec]
+saving image..
+saving stats..
+stripe 24 from 203
+f6..
+HH..  ML2D, elapsed time = 178 [sec]
+HV..  ML2D, elapsed time = 177 [sec]
+VH..  ML2D, elapsed time = 176 [sec]
+VV..  ML2D, elapsed time = 176 [sec]
+saving image..
+saving stats..
+stripe 25 from 203
+f6..
+HH..  ML2D, elapsed time = 166 [sec]
+HV..  ML2D, elapsed time = 168 [sec]
+VH..  ML2D, elapsed time = 166 [sec]
+VV..  ML2D, elapsed time = 166 [sec]
+saving image..
+saving stats..
+stripe 26 from 203
+f6..
+HH..  ML2D, elapsed time = 165 [sec]
+HV..  ML2D, elapsed time = 167 [sec]
+VH..  ML2D, elapsed time = 166 [sec]
+VV..  ML2D, elapsed time = 165 [sec]
+saving image..
+saving stats..
+stripe 27 from 203
+f6..
+HH..  ML2D, elapsed time = 186 [sec]
+HV..  ML2D, elapsed time = 185 [sec]
+VH..  ML2D, elapsed time = 187 [sec]
+VV..  ML2D, elapsed time = 187 [sec]
+saving image..
+saving stats..
+stripe 28 from 203
+f6..
+HH..  ML2D, elapsed time = 184 [sec]
+HV..  ML2D, elapsed time = 182 [sec]
+VH..  ML2D, elapsed time = 182 [sec]
+VV..  ML2D, elapsed time = 182 [sec]
+saving image..
+saving stats..
+stripe 29 from 203
+f6..
+HH..  ML2D, elapsed time = 194 [sec]
+HV..  ML2D, elapsed time = 195 [sec]
+VH..  ML2D, elapsed time = 196 [sec]
+VV..  ML2D, elapsed time = 195 [sec]
+saving image..
+saving stats..
+stripe 30 from 203
+f6..
+HH..  ML2D, elapsed time = 199 [sec]
+HV..  ML2D, elapsed time = 190 [sec]
+VH..  ML2D, elapsed time = 189 [sec]
+VV..  ML2D, elapsed time = 190 [sec]
+saving image..
+saving stats..
+stripe 31 from 203
+f6..
+HH..  ML2D, elapsed time = 187 [sec]
+HV..  ML2D, elapsed time = 186 [sec]
+VH..  ML2D, elapsed time = 188 [sec]
+VV..  ML2D, elapsed time = 187 [sec]
+saving image..
+saving stats..
+stripe 32 from 203
+f6..
+HH..  ML2D, elapsed time = 175 [sec]
+HV..  ML2D, elapsed time = 174 [sec]
+VH..  ML2D, elapsed time = 173 [sec]
+VV..  ML2D, elapsed time = 174 [sec]
+saving image..
+saving stats..
+stripe 33 from 203
+f6..
+HH..  ML2D, elapsed time = 199 [sec]
+HV..  ML2D, elapsed time = 201 [sec]
+VH..  ML2D, elapsed time = 204 [sec]
+VV..  ML2D, elapsed time = 202 [sec]
+saving image..
+saving stats..
+stripe 34 from 203
+f6..
+HH..  ML2D, elapsed time = 181 [sec]
+HV..  ML2D, elapsed time = 183 [sec]
+VH..  ML2D, elapsed time = 180 [sec]
+VV..  ML2D, elapsed time = 180 [sec]
+saving image..
+saving stats..
+stripe 35 from 203
+f6..
+HH..  ML2D, elapsed time = 190 [sec]
+HV..  ML2D, elapsed time = 190 [sec]
+VH..  ML2D, elapsed time = 189 [sec]
+VV..  ML2D, elapsed time = 188 [sec]
+saving image..
+saving stats..
+stripe 36 from 203
+f6..
+HH..  ML2D, elapsed time = 187 [sec]
+HV..  ML2D, elapsed time = 184 [sec]
+VH..  ML2D, elapsed time = 184 [sec]
+VV..  ML2D, elapsed time = 185 [sec]
+saving image..
+saving stats..
+stripe 37 from 203
+f6..
+HH..  ML2D, elapsed time = 195 [sec]
+HV..  ML2D, elapsed time = 197 [sec]
+VH..  ML2D, elapsed time = 197 [sec]
+VV..  ML2D, elapsed time = 197 [sec]
+saving image..
+saving stats..
+stripe 38 from 203
+f6..
+HH..  ML2D, elapsed time = 186 [sec]
+HV..  ML2D, elapsed time = 186 [sec]
+VH..  ML2D, elapsed time = 185 [sec]
+VV..  ML2D, elapsed time = 186 [sec]
+saving image..
+saving stats..
+stripe 39 from 203
+f6..
+HH..  ML2D, elapsed time = 187 [sec]
+HV..  ML2D, elapsed time = 186 [sec]
+VH..  ML2D, elapsed time = 187 [sec]
+VV..  ML2D, elapsed time = 188 [sec]
+saving image..
+saving stats..
+stripe 40 from 203
+f6..
+HH..  ML2D, elapsed time = 183 [sec]
+HV..  ML2D, elapsed time = 183 [sec]
+VH..  ML2D, elapsed time = 183 [sec]
+VV..  ML2D, elapsed time = 184 [sec]
+saving image..
+saving stats..
+stripe 41 from 203
+f6..
+HH..  ML2D, elapsed time = 182 [sec]
+HV..  ML2D, elapsed time = 184 [sec]
+VH..  ML2D, elapsed time = 183 [sec]
+VV..  ML2D, elapsed time = 182 [sec]
+saving image..
+saving stats..
+stripe 42 from 203
+f6..
+HH..  ML2D, elapsed time = 181 [sec]
+HV..  ML2D, elapsed time = 182 [sec]
+VH..  ML2D, elapsed time = 182 [sec]
+VV..  ML2D, elapsed time = 182 [sec]
+saving image..
+saving stats..
+stripe 43 from 203
+f6..
+HH..  ML2D, elapsed time = 192 [sec]
+HV..  ML2D, elapsed time = 191 [sec]
+VH..  ML2D, elapsed time = 191 [sec]
+VV..  ML2D, elapsed time = 193 [sec]
+saving image..
+saving stats..
+stripe 44 from 203
+f6..
+HH..  ML2D, elapsed time = 186 [sec]
+HV..  ML2D, elapsed time = 188 [sec]
+VH..  ML2D, elapsed time = 188 [sec]
+VV..  ML2D, elapsed time = 190 [sec]
+saving image..
+saving stats..
+stripe 45 from 203
+f6..
+HH..  ML2D, elapsed time = 187 [sec]
+HV..  ML2D, elapsed time = 187 [sec]
+VH..  ML2D, elapsed time = 188 [sec]
+VV..  ML2D, elapsed time = 188 [sec]
+saving image..
+saving stats..
+stripe 46 from 203
+f6..
+HH..  ML2D, elapsed time = 189 [sec]
+HV..  ML2D, elapsed time = 192 [sec]
+VH..  ML2D, elapsed time = 192 [sec]
+VV..  ML2D, elapsed time = 192 [sec]
+saving image..
+saving stats..
+stripe 47 from 203
+f6..
+HH..  ML2D, elapsed time = 189 [sec]
+HV..  ML2D, elapsed time = 188 [sec]
+VH..  ML2D, elapsed time = 190 [sec]
+VV..  ML2D, elapsed time = 189 [sec]
+saving image..
+saving stats..
+stripe 48 from 203
+f6..
+HH..  ML2D, elapsed time = 187 [sec]
+HV..  ML2D, elapsed time = 186 [sec]
+VH..  ML2D, elapsed time = 187 [sec]
+VV..  ML2D, elapsed time = 190 [sec]
+saving image..
+saving stats..
+stripe 49 from 203
+f6..
+HH..  ML2D, elapsed time = 188 [sec]
+HV..  ML2D, elapsed time = 189 [sec]
+VH..  ML2D, elapsed time = 189 [sec]
+VV..  ML2D, elapsed time = 188 [sec]
+saving image..
+saving stats..
+stripe 50 from 203
+f6..
+HH..  ML2D, elapsed time = 183 [sec]
+HV..  ML2D, elapsed time = 185 [sec]
+VH..  ML2D, elapsed time = 183 [sec]
+VV..  ML2D, elapsed time = 182 [sec]
+saving image..
+saving stats..
+stripe 51 from 203
+f6..
+HH..  ML2D, elapsed time = 190 [sec]
+HV..  ML2D, elapsed time = 188 [sec]
+VH..  ML2D, elapsed time = 189 [sec]
+VV..  ML2D, elapsed time = 191 [sec]
+saving image..
+saving stats..
+stripe 52 from 203
+f6..
+HH..  ML2D, elapsed time = 193 [sec]
+HV..  ML2D, elapsed time = 193 [sec]
+VH..  ML2D, elapsed time = 198 [sec]
+VV..  ML2D, elapsed time = 193 [sec]
+saving image..
+saving stats..
+stripe 53 from 203
+f6..
+HH..  ML2D, elapsed time = 197 [sec]
+HV..  ML2D, elapsed time = 197 [sec]
+VH..  ML2D, elapsed time = 198 [sec]
+VV..  ML2D, elapsed time = 196 [sec]
+saving image..
+saving stats..
+stripe 54 from 203
+f6..
+HH..  ML2D, elapsed time = 185 [sec]
+HV..  ML2D, elapsed time = 184 [sec]
+VH..  ML2D, elapsed time = 184 [sec]
+VV..  ML2D, elapsed time = 186 [sec]
+saving image..
+saving stats..
+stripe 55 from 203
+f6..
+HH..  ML2D, elapsed time = 191 [sec]
+HV..  ML2D, elapsed time = 194 [sec]
+VH..  ML2D, elapsed time = 190 [sec]
+VV..  ML2D, elapsed time = 193 [sec]
+saving image..
+saving stats..
+stripe 56 from 203
+f6..
+HH..  ML2D, elapsed time = 180 [sec]
+HV..  ML2D, elapsed time = 180 [sec]
+VH..  ML2D, elapsed time = 182 [sec]
+VV..  ML2D, elapsed time = 178 [sec]
+saving image..
+saving stats..
+stripe 57 from 203
+f6..
+HH..  ML2D, elapsed time = 242 [sec]
+HV..  ML2D, elapsed time = 242 [sec]
+VH..  ML2D, elapsed time = 242 [sec]
+VV..  ML2D, elapsed time = 243 [sec]
+saving image..
+saving stats..
+stripe 58 from 203
+f6..
+HH..  ML2D, elapsed time = 191 [sec]
+HV..  ML2D, elapsed time = 190 [sec]
+VH..  ML2D, elapsed time = 191 [sec]
+VV..  ML2D, elapsed time = 193 [sec]
+saving image..
+saving stats..
+stripe 59 from 203
+f6..
+HH..  ML2D, elapsed time = 229 [sec]
+HV..  ML2D, elapsed time = 231 [sec]
+VH..  ML2D, elapsed time = 231 [sec]
+VV..  ML2D, elapsed time = 231 [sec]
+saving image..
+saving stats..
+stripe 60 from 203
+f6..
+HH..  ML2D, elapsed time = 182 [sec]
+HV..  ML2D, elapsed time = 182 [sec]
+VH..  ML2D, elapsed time = 181 [sec]
+VV..  ML2D, elapsed time = 182 [sec]
+saving image..
+saving stats..
+stripe 61 from 203
+f6..
+HH..  ML2D, elapsed time = 193 [sec]
+HV..  ML2D, elapsed time = 194 [sec]
+VH..  ML2D, elapsed time = 196 [sec]
+VV..  ML2D, elapsed time = 196 [sec]
+saving image..
+saving stats..
+stripe 62 from 203
+f6..
+HH..  ML2D, elapsed time = 182 [sec]
+HV..  ML2D, elapsed time = 181 [sec]
+VH..  ML2D, elapsed time = 180 [sec]
+VV..  ML2D, elapsed time = 181 [sec]
+saving image..
+saving stats..
+stripe 63 from 203
+f6..
+HH..  ML2D, elapsed time = 182 [sec]
+HV..  ML2D, elapsed time = 181 [sec]
+VH..  ML2D, elapsed time = 184 [sec]
+VV..  ML2D, elapsed time = 183 [sec]
+saving image..
+saving stats..
+stripe 64 from 203
+f6..
+HH..  ML2D, elapsed time = 186 [sec]
+HV..  ML2D, elapsed time = 185 [sec]
+VH..  ML2D, elapsed time = 185 [sec]
+VV..  ML2D, elapsed time = 185 [sec]
+saving image..
+saving stats..
+stripe 65 from 203
+f6..
+HH..  ML2D, elapsed time = 190 [sec]
+HV..  ML2D, elapsed time = 193 [sec]
+VH..  ML2D, elapsed time = 194 [sec]
+VV..  ML2D, elapsed time = 194 [sec]
+saving image..
+saving stats..
+stripe 66 from 203
+f6..
+HH..  ML2D, elapsed time = 191 [sec]
+HV..  ML2D, elapsed time = 194 [sec]
+VH..  ML2D, elapsed time = 193 [sec]
+VV..  ML2D, elapsed time = 191 [sec]
+saving image..
+saving stats..
+stripe 67 from 203
+f6..
+HH..  ML2D, elapsed time = 182 [sec]
+HV..  ML2D, elapsed time = 184 [sec]
+VH..  ML2D, elapsed time = 183 [sec]
+VV..  ML2D, elapsed time = 184 [sec]
+saving image..
+saving stats..
+stripe 68 from 203
+f6..
+HH..  ML2D, elapsed time = 186 [sec]
+HV..  ML2D, elapsed time = 184 [sec]
+VH..  ML2D, elapsed time = 186 [sec]
+VV..  ML2D, elapsed time = 187 [sec]
+saving image..
+saving stats..
+stripe 69 from 203
+f6..
+HH..  ML2D, elapsed time = 189 [sec]
+HV..  ML2D, elapsed time = 190 [sec]
+VH..  ML2D, elapsed time = 189 [sec]
+VV..  ML2D, elapsed time = 190 [sec]
+saving image..
+saving stats..
+stripe 70 from 203
+f6..
+HH..  ML2D, elapsed time = 194 [sec]
+HV..  ML2D, elapsed time = 196 [sec]
+VH..  ML2D, elapsed time = 198 [sec]
+VV..  ML2D, elapsed time = 196 [sec]
+saving image..
+saving stats..
+stripe 71 from 203
+f6..
+HH..  ML2D, elapsed time = 193 [sec]
+HV..  ML2D, elapsed time = 192 [sec]
+VH..  ML2D, elapsed time = 193 [sec]
+VV..  ML2D, elapsed time = 192 [sec]
+saving image..
+saving stats..
+stripe 72 from 203
+f6..
+HH..  ML2D, elapsed time = 184 [sec]
+HV..  ML2D, elapsed time = 184 [sec]
+VH..  ML2D, elapsed time = 183 [sec]
+VV..  ML2D, elapsed time = 185 [sec]
+saving image..
+saving stats..
+stripe 73 from 203
+f6..
+HH..  ML2D, elapsed time = 186 [sec]
+HV..  ML2D, elapsed time = 185 [sec]
+VH..  ML2D, elapsed time = 184 [sec]
+VV..  ML2D, elapsed time = 183 [sec]
+saving image..
+saving stats..
+stripe 74 from 203
+f6..
+HH..  ML2D, elapsed time = 195 [sec]
+HV..  ML2D, elapsed time = 195 [sec]
+VH..  ML2D, elapsed time = 195 [sec]
+VV..  ML2D, elapsed time = 193 [sec]
+saving image..
+saving stats..
+stripe 75 from 203
+f6..
+HH..  ML2D, elapsed time = 185 [sec]
+HV..  ML2D, elapsed time = 183 [sec]
+VH..  ML2D, elapsed time = 185 [sec]
+VV..  ML2D, elapsed time = 185 [sec]
+saving image..
+saving stats..
+stripe 76 from 203
+f6..
+HH..  ML2D, elapsed time = 187 [sec]
+HV..  ML2D, elapsed time = 186 [sec]
+VH..  ML2D, elapsed time = 190 [sec]
+VV..  ML2D, elapsed time = 188 [sec]
+saving image..
+saving stats..
+stripe 77 from 203
+f6..
+HH..  ML2D, elapsed time = 187 [sec]
+HV..  ML2D, elapsed time = 188 [sec]
+VH..  ML2D, elapsed time = 189 [sec]
+VV..  ML2D, elapsed time = 190 [sec]
+saving image..
+saving stats..
+stripe 78 from 203
+f6..
+HH..  ML2D, elapsed time = 241 [sec]
+HV..  ML2D, elapsed time = 243 [sec]
+VH..  ML2D, elapsed time = 242 [sec]
+VV..  ML2D, elapsed time = 243 [sec]
+saving image..
+saving stats..
+stripe 79 from 203
+f6..
+HH..  ML2D, elapsed time = 188 [sec]
+HV..  ML2D, elapsed time = 189 [sec]
+VH..  ML2D, elapsed time = 191 [sec]
+VV..  ML2D, elapsed time = 188 [sec]
+saving image..
+saving stats..
+stripe 80 from 203
+f6..
+HH..  ML2D, elapsed time = 193 [sec]
+HV..  ML2D, elapsed time = 186 [sec]
+VH..  ML2D, elapsed time = 190 [sec]
+VV..  ML2D, elapsed time = 185 [sec]
+saving image..
+saving stats..
+stripe 81 from 203
+f6..
+HH..  ML2D, elapsed time = 184 [sec]
+HV..  ML2D, elapsed time = 186 [sec]
+VH..  ML2D, elapsed time = 184 [sec]
+VV..  ML2D, elapsed time = 185 [sec]
+saving image..
+saving stats..
+stripe 82 from 203
+f6..
+HH..  ML2D, elapsed time = 190 [sec]
+HV..  ML2D, elapsed time = 190 [sec]
+VH..  ML2D, elapsed time = 189 [sec]
+VV..  ML2D, elapsed time = 191 [sec]
+saving image..
+saving stats..
+stripe 83 from 203
+f6..
+HH..  ML2D, elapsed time = 191 [sec]
+HV..  ML2D, elapsed time = 190 [sec]
+VH..  ML2D, elapsed time = 191 [sec]
+VV..  ML2D, elapsed time = 190 [sec]
+saving image..
+saving stats..
+stripe 84 from 203
+f6..
+HH..  ML2D, elapsed time = 236 [sec]
+HV..  ML2D, elapsed time = 239 [sec]
+VH..  ML2D, elapsed time = 239 [sec]
+VV..  ML2D, elapsed time = 238 [sec]
+saving image..
+saving stats..
+stripe 85 from 203
+f6..
+HH..  ML2D, elapsed time = 185 [sec]
+HV..  ML2D, elapsed time = 185 [sec]
+VH..  ML2D, elapsed time = 186 [sec]
+VV..  ML2D, elapsed time = 187 [sec]
+saving image..
+saving stats..
+stripe 86 from 203
+f6..
+HH..  ML2D, elapsed time = 189 [sec]
+HV..  ML2D, elapsed time = 190 [sec]
+VH..  ML2D, elapsed time = 191 [sec]
+VV..  ML2D, elapsed time = 195 [sec]
+saving image..
+saving stats..
+stripe 87 from 203
+f6..
+HH..  ML2D, elapsed time = 189 [sec]
+HV..  ML2D, elapsed time = 190 [sec]
+VH..  ML2D, elapsed time = 189 [sec]
+VV..  ML2D, elapsed time = 188 [sec]
+saving image..
+saving stats..
+stripe 88 from 203
+f6..
+HH..  ML2D, elapsed time = 251 [sec]
+HV..  ML2D, elapsed time = 252 [sec]
+VH..  ML2D, elapsed time = 253 [sec]
+VV..  ML2D, elapsed time = 261 [sec]
+saving image..
+saving stats..
+stripe 89 from 203
+f6..
+HH..  ML2D, elapsed time = 186 [sec]
+HV..  ML2D, elapsed time = 184 [sec]
+VH..  ML2D, elapsed time = 184 [sec]
+VV..  ML2D, elapsed time = 185 [sec]
+saving image..
+saving stats..
+stripe 90 from 203
+f6..
+HH..  ML2D, elapsed time = 185 [sec]
+HV..  ML2D, elapsed time = 191 [sec]
+VH..  ML2D, elapsed time = 185 [sec]
+VV..  ML2D, elapsed time = 188 [sec]
+saving image..
+saving stats..
+stripe 91 from 203
+f6..
+HH..  ML2D, elapsed time = 188 [sec]
+HV..  ML2D, elapsed time = 187 [sec]
+VH..  ML2D, elapsed time = 187 [sec]
+VV..  ML2D, elapsed time = 190 [sec]
+saving image..
+saving stats..
+stripe 92 from 203
+f6..
+HH..  ML2D, elapsed time = 239 [sec]
+HV..  ML2D, elapsed time = 240 [sec]
+VH..  ML2D, elapsed time = 241 [sec]
+VV..  ML2D, elapsed time = 242 [sec]
+saving image..
+saving stats..
+stripe 93 from 203
+f6..
+HH..  ML2D, elapsed time = 185 [sec]
+HV..  ML2D, elapsed time = 184 [sec]
+VH..  ML2D, elapsed time = 183 [sec]
+VV..  ML2D, elapsed time = 184 [sec]
+saving image..
+saving stats..
+stripe 94 from 203
+f6..
+HH..  ML2D, elapsed time = 188 [sec]
+HV..  ML2D, elapsed time = 189 [sec]
+VH..  ML2D, elapsed time = 188 [sec]
+VV..  ML2D, elapsed time = 190 [sec]
+saving image..
+saving stats..
+stripe 95 from 203
+f6..
+HH..  ML2D, elapsed time = 195 [sec]
+HV..  ML2D, elapsed time = 192 [sec]
+VH..  ML2D, elapsed time = 193 [sec]
+VV..  ML2D, elapsed time = 192 [sec]
+saving image..
+saving stats..
+stripe 96 from 203
+f6..
+HH..  ML2D, elapsed time = 182 [sec]
+HV..  ML2D, elapsed time = 179 [sec]
+VH..  ML2D, elapsed time = 183 [sec]
+VV..  ML2D, elapsed time = 181 [sec]
+saving image..
+saving stats..
+stripe 97 from 203
+f6..
+HH..  ML2D, elapsed time = 188 [sec]
+HV..  ML2D, elapsed time = 192 [sec]
+VH..  ML2D, elapsed time = 188 [sec]
+VV..  ML2D, elapsed time = 189 [sec]
+saving image..
+saving stats..
+stripe 98 from 203
+f6..
+HH..  ML2D, elapsed time = 180 [sec]
+HV..  ML2D, elapsed time = 175 [sec]
+VH..  ML2D, elapsed time = 175 [sec]
+VV..  ML2D, elapsed time = 177 [sec]
+saving image..
+saving stats..
+stripe 99 from 203
+f6..
+HH..  ML2D, elapsed time = 179 [sec]
+HV..  ML2D, elapsed time = 177 [sec]
+VH..  ML2D, elapsed time = 176 [sec]
+VV..  ML2D, elapsed time = 177 [sec]
+saving image..
+saving stats..
+stripe 100 from 203
+f6..
+HH..  ML2D, elapsed time = 226 [sec]
+HV..  ML2D, elapsed time = 227 [sec]
+VH..  ML2D, elapsed time = 229 [sec]
+VV..  ML2D, elapsed time = 227 [sec]
+saving image..
+saving stats..
+stripe 101 from 203
+f6..
+HH..  ML2D, elapsed time = 183 [sec]
+HV..  ML2D, elapsed time = 181 [sec]
+VH..  ML2D, elapsed time = 182 [sec]
+VV..  ML2D, elapsed time = 183 [sec]
+saving image..
+saving stats..
+stripe 102 from 203
+f6..
+HH..  ML2D, elapsed time = 186 [sec]
+HV..  ML2D, elapsed time = 185 [sec]
+VH..  ML2D, elapsed time = 186 [sec]
+VV..  ML2D, elapsed time = 186 [sec]
+saving image..
+saving stats..
+stripe 103 from 203
+f6..
+HH..  ML2D, elapsed time = 231 [sec]
+HV..  ML2D, elapsed time = 233 [sec]
+VH..  ML2D, elapsed time = 232 [sec]
+VV..  ML2D, elapsed time = 233 [sec]
+saving image..
+saving stats..
+stripe 104 from 203
+f6..
+HH..  ML2D, elapsed time = 182 [sec]
+HV..  ML2D, elapsed time = 181 [sec]
+VH..  ML2D, elapsed time = 182 [sec]
+VV..  ML2D, elapsed time = 181 [sec]
+saving image..
+saving stats..
+stripe 105 from 203
+f6..
+HH..  ML2D, elapsed time = 179 [sec]
+HV..  ML2D, elapsed time = 181 [sec]
+VH..  ML2D, elapsed time = 176 [sec]
+VV..  ML2D, elapsed time = 175 [sec]
+saving image..
+saving stats..
+stripe 106 from 203
+f6..
+HH..  ML2D, elapsed time = 235 [sec]
+HV..  ML2D, elapsed time = 237 [sec]
+VH..  ML2D, elapsed time = 238 [sec]
+VV..  ML2D, elapsed time = 236 [sec]
+saving image..
+saving stats..
+stripe 107 from 203
+f6..
+HH..  ML2D, elapsed time = 190 [sec]
+HV..  ML2D, elapsed time = 195 [sec]
+VH..  ML2D, elapsed time = 190 [sec]
+VV..  ML2D, elapsed time = 191 [sec]
+saving image..
+saving stats..
+stripe 108 from 203
+f6..
+HH..  ML2D, elapsed time = 191 [sec]
+HV..  ML2D, elapsed time = 190 [sec]
+VH..  ML2D, elapsed time = 190 [sec]
+VV..  ML2D, elapsed time = 190 [sec]
+saving image..
+saving stats..
+stripe 109 from 203
+f6..
+HH..  ML2D, elapsed time = 187 [sec]
+HV..  ML2D, elapsed time = 187 [sec]
+VH..  ML2D, elapsed time = 187 [sec]
+VV..  ML2D, elapsed time = 187 [sec]
+saving image..
+saving stats..
+stripe 110 from 203
+f6..
+HH..  ML2D, elapsed time = 188 [sec]
+HV..  ML2D, elapsed time = 188 [sec]
+VH..  ML2D, elapsed time = 188 [sec]
+VV..  ML2D, elapsed time = 188 [sec]
+saving image..
+saving stats..
+stripe 111 from 203
+f6..
+HH..  ML2D, elapsed time = 178 [sec]
+HV..  ML2D, elapsed time = 178 [sec]
+VH..  ML2D, elapsed time = 173 [sec]
+VV..  ML2D, elapsed time = 174 [sec]
+saving image..
+saving stats..
+stripe 112 from 203
+f6..
+HH..  ML2D, elapsed time = 242 [sec]
+HV..  ML2D, elapsed time = 243 [sec]
+VH..  ML2D, elapsed time = 246 [sec]
+VV..  ML2D, elapsed time = 244 [sec]
+saving image..
+saving stats..
+stripe 113 from 203
+f6..
+HH..  ML2D, elapsed time = 187 [sec]
+HV..  ML2D, elapsed time = 186 [sec]
+VH..  ML2D, elapsed time = 187 [sec]
+VV..  ML2D, elapsed time = 185 [sec]
+saving image..
+saving stats..
+stripe 114 from 203
+f6..
+HH..  ML2D, elapsed time = 183 [sec]
+HV..  ML2D, elapsed time = 183 [sec]
+VH..  ML2D, elapsed time = 184 [sec]
+VV..  ML2D, elapsed time = 183 [sec]
+saving image..
+saving stats..
+stripe 115 from 203
+f6..
+HH..  ML2D, elapsed time = 187 [sec]
+HV..  ML2D, elapsed time = 186 [sec]
+VH..  ML2D, elapsed time = 186 [sec]
+VV..  ML2D, elapsed time = 185 [sec]
+saving image..
+saving stats..
+stripe 116 from 203
+f6..
+HH..  ML2D, elapsed time = 185 [sec]
+HV..  ML2D, elapsed time = 186 [sec]
+VH..  ML2D, elapsed time = 184 [sec]
+VV..  ML2D, elapsed time = 188 [sec]
+saving image..
+saving stats..
+stripe 117 from 203
+f6..
+HH..  ML2D, elapsed time = 189 [sec]
+HV..  ML2D, elapsed time = 188 [sec]
+VH..  ML2D, elapsed time = 190 [sec]
+VV..  ML2D, elapsed time = 186 [sec]
+saving image..
+saving stats..
+stripe 118 from 203
+f6..
+HH..  ML2D, elapsed time = 190 [sec]
+HV..  ML2D, elapsed time = 192 [sec]
+VH..  ML2D, elapsed time = 193 [sec]
+VV..  ML2D, elapsed time = 192 [sec]
+saving image..
+saving stats..
+stripe 119 from 203
+f6..
+HH..  ML2D, elapsed time = 201 [sec]
+HV..  ML2D, elapsed time = 201 [sec]
+VH..  ML2D, elapsed time = 199 [sec]
+VV..  ML2D, elapsed time = 201 [sec]
+saving image..
+saving stats..
+stripe 120 from 203
+f6..
+HH..  ML2D, elapsed time = 203 [sec]
+HV..  ML2D, elapsed time = 203 [sec]
+VH..  ML2D, elapsed time = 204 [sec]
+VV..  ML2D, elapsed time = 202 [sec]
+saving image..
+saving stats..
+stripe 121 from 203
+f6..
+HH..  ML2D, elapsed time = 194 [sec]
+HV..  ML2D, elapsed time = 191 [sec]
+VH..  ML2D, elapsed time = 190 [sec]
+VV..  ML2D, elapsed time = 189 [sec]
+saving image..
+saving stats..
+stripe 122 from 203
+f6..
+HH..  ML2D, elapsed time = 193 [sec]
+HV..  ML2D, elapsed time = 189 [sec]
+VH..  ML2D, elapsed time = 190 [sec]
+VV..  ML2D, elapsed time = 193 [sec]
+saving image..
+saving stats..
+stripe 123 from 203
+f6..
+HH..  ML2D, elapsed time = 187 [sec]
+HV..  ML2D, elapsed time = 184 [sec]
+VH..  ML2D, elapsed time = 186 [sec]
+VV..  ML2D, elapsed time = 188 [sec]
+saving image..
+saving stats..
+stripe 124 from 203
+f6..
+HH..  ML2D, elapsed time = 238 [sec]
+HV..  ML2D, elapsed time = 238 [sec]
+VH..  ML2D, elapsed time = 239 [sec]
+VV..  ML2D, elapsed time = 240 [sec]
+saving image..
+saving stats..
+stripe 125 from 203
+f6..
+HH..  ML2D, elapsed time = 229 [sec]
+HV..  ML2D, elapsed time = 229 [sec]
+VH..  ML2D, elapsed time = 228 [sec]
+VV..  ML2D, elapsed time = 228 [sec]
+saving image..
+saving stats..
+stripe 126 from 203
+f6..
+HH..  ML2D, elapsed time = 178 [sec]
+HV..  ML2D, elapsed time = 179 [sec]
+VH..  ML2D, elapsed time = 180 [sec]
+VV..  ML2D, elapsed time = 179 [sec]
+saving image..
+saving stats..
+stripe 127 from 203
+f6..
+HH..  ML2D, elapsed time = 182 [sec]
+HV..  ML2D, elapsed time = 181 [sec]
+VH..  ML2D, elapsed time = 180 [sec]
+VV..  ML2D, elapsed time = 180 [sec]
+saving image..
+saving stats..
+stripe 128 from 203
+f6..
+HH..  ML2D, elapsed time = 188 [sec]
+HV..  ML2D, elapsed time = 188 [sec]
+VH..  ML2D, elapsed time = 190 [sec]
+VV..  ML2D, elapsed time = 190 [sec]
+saving image..
+saving stats..
+stripe 129 from 203
+f6..
+HH..  ML2D, elapsed time = 193 [sec]
+HV..  ML2D, elapsed time = 191 [sec]
+VH..  ML2D, elapsed time = 194 [sec]
+VV..  ML2D, elapsed time = 195 [sec]
+saving image..
+saving stats..
+stripe 130 from 203
+f6..
+HH..  ML2D, elapsed time = 189 [sec]
+HV..  ML2D, elapsed time = 188 [sec]
+VH..  ML2D, elapsed time = 192 [sec]
+VV..  ML2D, elapsed time = 190 [sec]
+saving image..
+saving stats..
+stripe 131 from 203
+f6..
+HH..  ML2D, elapsed time = 247 [sec]
+HV..  ML2D, elapsed time = 246 [sec]
+VH..  ML2D, elapsed time = 245 [sec]
+VV..  ML2D, elapsed time = 248 [sec]
+saving image..
+saving stats..
+stripe 132 from 203
+f6..
+HH..  ML2D, elapsed time = 195 [sec]
+HV..  ML2D, elapsed time = 193 [sec]
+VH..  ML2D, elapsed time = 196 [sec]
+VV..  ML2D, elapsed time = 195 [sec]
+saving image..
+saving stats..
+stripe 133 from 203
+f6..
+HH..  ML2D, elapsed time = 237 [sec]
+HV..  ML2D, elapsed time = 240 [sec]
+VH..  ML2D, elapsed time = 240 [sec]
+VV..  ML2D, elapsed time = 240 [sec]
+saving image..
+saving stats..
+stripe 134 from 203
+f6..
+HH..  ML2D, elapsed time = 269 [sec]
+HV..  ML2D, elapsed time = 267 [sec]
+VH..  ML2D, elapsed time = 269 [sec]
+VV..  ML2D, elapsed time = 269 [sec]
+saving image..
+saving stats..
+stripe 135 from 203
+f6..
+HH..  ML2D, elapsed time = 230 [sec]
+HV..  ML2D, elapsed time = 223 [sec]
+VH..  ML2D, elapsed time = 224 [sec]
+VV..  ML2D, elapsed time = 225 [sec]
+saving image..
+saving stats..
+stripe 136 from 203
+f6..
+HH..  ML2D, elapsed time = 221 [sec]
+HV..  ML2D, elapsed time = 224 [sec]
+VH..  ML2D, elapsed time = 220 [sec]
+VV..  ML2D, elapsed time = 223 [sec]
+saving image..
+saving stats..
+stripe 137 from 203
+f6..
+HH..  ML2D, elapsed time = 225 [sec]
+HV..  ML2D, elapsed time = 224 [sec]
+VH..  ML2D, elapsed time = 226 [sec]
+VV..  ML2D, elapsed time = 228 [sec]
+saving image..
+saving stats..
+stripe 138 from 203
+f6..
+HH..  ML2D, elapsed time = 222 [sec]
+HV..  ML2D, elapsed time = 222 [sec]
+VH.. saving stats..
+stripe 139 from 203
+f6..
+HH..  ML2D, elapsed time = 226 [sec]
+HV..  ML2D, elapsed time = 226 [sec]
+VH..  ML2D, elapsed time = 224 [sec]
+VV..  ML2D, elapsed time = 226 [sec]
+saving image..
+saving stats..
+stripe 140 from 203
+f6..
+HH..  ML2D, elapsed time = 240 [sec]
+HV..  ML2D, elapsed time = 242 [sec]
+VH..  ML2D, elapsed time = 241 [sec]
+VV..  ML2D, elapsed time = 241 [sec]
+saving image..
+saving stats..
+stripe 141 from 203
+f6..
+HH..  ML2D, elapsed time = 268 [sec]
+HV..  ML2D, elapsed time = 266 [sec]
+VH..  ML2D, elapsed time = 267 [sec]
+VV..  ML2D, elapsed time = 268 [sec]
+saving image..
+saving stats..
+stripe 142 from 203
+f6..
+HH..  ML2D, elapsed time = 271 [sec]
+HV..  ML2D, elapsed time = 275 [sec]
+VH..  ML2D, elapsed time = 276 [sec]
+VV..  ML2D, elapsed time = 276 [sec]
+saving image..
+saving stats..
+stripe 143 from 203
+f6..
+HH..  ML2D, elapsed time = 236 [sec]
+HV..  ML2D, elapsed time = 241 [sec]
+VH..  ML2D, elapsed time = 242 [sec]
+VV..  ML2D, elapsed time = 238 [sec]
+saving image..
+saving stats..
+stripe 144 from 203
+f6..
+HH..  ML2D, elapsed time = 242 [sec]
+HV..  ML2D, elapsed time = 243 [sec]
+VH..  ML2D, elapsed time = 245 [sec]
+VV..  ML2D, elapsed time = 244 [sec]
+saving image..
+saving stats..
+stripe 145 from 203
+f6..
+HH..  ML2D, elapsed time = 232 [sec]
+HV..  ML2D, elapsed time = 232 [sec]
+VH..  ML2D, elapsed time = 233 [sec]
+VV..  ML2D, elapsed time = 235 [sec]
+saving image..
+saving stats..
+stripe 146 from 203
+f6..
+HH..  ML2D, elapsed time = 237 [sec]
+HV..  ML2D, elapsed time = 238 [sec]
+VH..  ML2D, elapsed time = 235 [sec]
+VV..  ML2D, elapsed time = 233 [sec]
+saving image..
+saving stats..
+stripe 147 from 203
+f6..
+HH..  ML2D, elapsed time = 236 [sec]
+HV..  ML2D, elapsed time = 233 [sec]
+VH..  ML2D, elapsed time = 231 [sec]
+VV..  ML2D, elapsed time = 232 [sec]
+saving image..
+saving stats..
+stripe 148 from 203
+f6..
+HH..  ML2D, elapsed time = 254 [sec]
+HV..  ML2D, elapsed time = 256 [sec]
+VH..  ML2D, elapsed time = 248 [sec]
+VV..  ML2D, elapsed time = 251 [sec]
+saving image..
+saving stats..
+stripe 149 from 203
+f6..
+HH..  ML2D, elapsed time = 228 [sec]
+HV..  ML2D, elapsed time = 226 [sec]
+VH..  ML2D, elapsed time = 230 [sec]
+VV..  ML2D, elapsed time = 230 [sec]
+saving image..
+saving stats..
+stripe 150 from 203
+f6..
+HH..  ML2D, elapsed time = 231 [sec]
+HV..  ML2D, elapsed time = 231 [sec]
+VH..  ML2D, elapsed time = 232 [sec]
+VV..  ML2D, elapsed time = 234 [sec]
+saving image..
+saving stats..
+stripe 151 from 203
+f6..
+HH..  ML2D, elapsed time = 239 [sec]
+HV..  ML2D, elapsed time = 232 [sec]
+VH..  ML2D, elapsed time = 231 [sec]
+VV..  ML2D, elapsed time = 230 [sec]
+saving image..
+saving stats..
+stripe 152 from 203
+f6..
+HH..  ML2D, elapsed time = 225 [sec]
+HV..  ML2D, elapsed time = 223 [sec]
+VH..  ML2D, elapsed time = 224 [sec]
+VV..  ML2D, elapsed time = 223 [sec]
+saving image..
+saving stats..
+stripe 153 from 203
+f6..
+HH..  ML2D, elapsed time = 224 [sec]
+HV..  ML2D, elapsed time = 226 [sec]
+VH..  ML2D, elapsed time = 225 [sec]
+VV..  ML2D, elapsed time = 225 [sec]
+saving image..
+saving stats..
+stripe 154 from 203
+f6..
+HH..  ML2D, elapsed time = 250 [sec]
+HV..  ML2D, elapsed time = 253 [sec]
+VH..  ML2D, elapsed time = 252 [sec]
+VV..  ML2D, elapsed time = 249 [sec]
+saving image..
+saving stats..
+stripe 155 from 203
+f6..
+HH..  ML2D, elapsed time = 226 [sec]
+HV..  ML2D, elapsed time = 222 [sec]
+VH..  ML2D, elapsed time = 226 [sec]
+VV..  ML2D, elapsed time = 223 [sec]
+saving image..
+saving stats..
+stripe 156 from 203
+f6..
+HH..  ML2D, elapsed time = 244 [sec]
+HV..  ML2D, elapsed time = 246 [sec]
+VH..  ML2D, elapsed time = 246 [sec]
+VV..  ML2D, elapsed time = 249 [sec]
+saving image..
+saving stats..
+stripe 157 from 203
+f6..
+HH..  ML2D, elapsed time = 233 [sec]
+HV..  ML2D, elapsed time = 234 [sec]
+VH..  ML2D, elapsed time = 231 [sec]
+VV..  ML2D, elapsed time = 232 [sec]
+saving image..
+saving stats..
+stripe 158 from 203
+f6..
+HH..  ML2D, elapsed time = 260 [sec]
+HV..  ML2D, elapsed time = 260 [sec]
+VH..  ML2D, elapsed time = 264 [sec]
+VV..  ML2D, elapsed time = 263 [sec]
+saving image..
+saving stats..
+stripe 159 from 203
+f6..
+HH..  ML2D, elapsed time = 217 [sec]
+HV..  ML2D, elapsed time = 216 [sec]
+VH..  ML2D, elapsed time = 217 [sec]
+VV..  ML2D, elapsed time = 217 [sec]
+saving image..
+saving stats..
+stripe 160 from 203
+f6..
+HH..  ML2D, elapsed time = 233 [sec]
+HV..  ML2D, elapsed time = 234 [sec]
+VH..  ML2D, elapsed time = 234 [sec]
+VV..  ML2D, elapsed time = 233 [sec]
+saving image..
+saving stats..
+stripe 161 from 203
+f6..
+HH..  ML2D, elapsed time = 239 [sec]
+HV..  ML2D, elapsed time = 241 [sec]
+VH..  ML2D, elapsed time = 241 [sec]
+VV..  ML2D, elapsed time = 240 [sec]
+saving image..
+saving stats..
+stripe 162 from 203
+f6..
+HH..  ML2D, elapsed time = 271 [sec]
+HV..  ML2D, elapsed time = 271 [sec]
+VH..  ML2D, elapsed time = 270 [sec]
+VV..  ML2D, elapsed time = 273 [sec]
+saving image..
+saving stats..
+stripe 163 from 203
+f6..
+HH..  ML2D, elapsed time = 229 [sec]
+HV..  ML2D, elapsed time = 228 [sec]
+VH..  ML2D, elapsed time = 230 [sec]
+VV..  ML2D, elapsed time = 231 [sec]
+saving image..
+saving stats..
+stripe 164 from 203
+f6..
+HH..  ML2D, elapsed time = 226 [sec]
+HV..  ML2D, elapsed time = 223 [sec]
+VH..  ML2D, elapsed time = 224 [sec]
+VV..  ML2D, elapsed time = 226 [sec]
+saving image..
+saving stats..
+stripe 165 from 203
+f6..
+HH..  ML2D, elapsed time = 222 [sec]
+HV..  ML2D, elapsed time = 222 [sec]
+VH..  ML2D, elapsed time = 220 [sec]
+VV..  ML2D, elapsed time = 220 [sec]
+saving image..
+saving stats..
+stripe 166 from 203
+f6..
+HH..  ML2D, elapsed time = 228 [sec]
+HV..  ML2D, elapsed time = 229 [sec]
+VH..  ML2D, elapsed time = 227 [sec]
+VV..  ML2D, elapsed time = 228 [sec]
+saving image..
+saving stats..
+stripe 167 from 203
+f6..
+HH..  ML2D, elapsed time = 226 [sec]
+HV..  ML2D, elapsed time = 224 [sec]
+VH..  ML2D, elapsed time = 226 [sec]
+VV..  ML2D, elapsed time = 226 [sec]
+saving image..
+saving stats..
+stripe 168 from 203
+f6..
+HH..  ML2D, elapsed time = 225 [sec]
+HV..  ML2D, elapsed time = 226 [sec]
+VH..  ML2D, elapsed time = 220 [sec]
+VV..  ML2D, elapsed time = 220 [sec]
+saving image..
+saving stats..
+stripe 169 from 203
+f6..
+HH..  ML2D, elapsed time = 217 [sec]
+HV..  ML2D, elapsed time = 216 [sec]
+VH..  ML2D, elapsed time = 214 [sec]
+VV..  ML2D, elapsed time = 216 [sec]
+saving image..
+saving stats..
+stripe 170 from 203
+f6..
+HH..  ML2D, elapsed time = 214 [sec]
+HV..  ML2D, elapsed time = 215 [sec]
+VH..  ML2D, elapsed time = 216 [sec]
+VV..  ML2D, elapsed time = 214 [sec]
+saving image..
+saving stats..
+stripe 171 from 203
+f6..
+HH..  ML2D, elapsed time = 226 [sec]
+HV..  ML2D, elapsed time = 228 [sec]
+VH..  ML2D, elapsed time = 225 [sec]
+VV..  ML2D, elapsed time = 230 [sec]
+saving image..
+saving stats..
+stripe 172 from 203
+f6..
+HH..  ML2D, elapsed time = 225 [sec]
+HV..  ML2D, elapsed time = 226 [sec]
+VH..  ML2D, elapsed time = 225 [sec]
+VV..  ML2D, elapsed time = 224 [sec]
+saving image..
+saving stats..
+stripe 173 from 203
+f6..
+HH..  ML2D, elapsed time = 237 [sec]
+HV..  ML2D, elapsed time = 236 [sec]
+VH..  ML2D, elapsed time = 237 [sec]
+VV..  ML2D, elapsed time = 238 [sec]
+saving image..
+saving stats..
+stripe 174 from 203
+f6..
+HH..  ML2D, elapsed time = 224 [sec]
+HV..  ML2D, elapsed time = 223 [sec]
+VH..  ML2D, elapsed time = 227 [sec]
+VV..  ML2D, elapsed time = 226 [sec]
+saving image..
+saving stats..
+stripe 175 from 203
+f6..
+HH..  ML2D, elapsed time = 229 [sec]
+HV..  ML2D, elapsed time = 227 [sec]
+VH..  ML2D, elapsed time = 225 [sec]
+VV..  ML2D, elapsed time = 226 [sec]
+saving image..
+saving stats..
+stripe 176 from 203
+f6..
+HH..  ML2D, elapsed time = 222 [sec]
+HV..  ML2D, elapsed time = 221 [sec]
+VH..  ML2D, elapsed time = 223 [sec]
+VV..  ML2D, elapsed time = 220 [sec]
+saving image..
+saving stats..
+stripe 177 from 203
+f6..
+HH..  ML2D, elapsed time = 222 [sec]
+HV..  ML2D, elapsed time = 224 [sec]
+VH..  ML2D, elapsed time = 222 [sec]
+VV..  ML2D, elapsed time = 222 [sec]
+saving image..
+saving stats..
+stripe 178 from 203
+f6..
+HH..  ML2D, elapsed time = 224 [sec]
+HV..  ML2D, elapsed time = 224 [sec]
+VH..  ML2D, elapsed time = 224 [sec]
+VV..  ML2D, elapsed time = 224 [sec]
+saving image..
+saving stats..
+stripe 179 from 203
+f6..
+HH..  ML2D, elapsed time = 223 [sec]
+HV..  ML2D, elapsed time = 221 [sec]
+VH..  ML2D, elapsed time = 223 [sec]
+VV..  ML2D, elapsed time = 224 [sec]
+saving image..
+saving stats..
+stripe 180 from 203
+f6..
+HH..  ML2D, elapsed time = 209 [sec]
+HV..  ML2D, elapsed time = 205 [sec]
+VH..  ML2D, elapsed time = 206 [sec]
+VV..  ML2D, elapsed time = 206 [sec]
+saving image..
+saving stats..
+stripe 181 from 203
+f6..
+HH..  ML2D, elapsed time = 224 [sec]
+HV..  ML2D, elapsed time = 230 [sec]
+VH..  ML2D, elapsed time = 229 [sec]
+VV..  ML2D, elapsed time = 227 [sec]
+saving image..
+saving stats..
+stripe 182 from 203
+f6..
+HH..  ML2D, elapsed time = 228 [sec]
+HV..  ML2D, elapsed time = 231 [sec]
+VH..  ML2D, elapsed time = 230 [sec]
+VV..  ML2D, elapsed time = 227 [sec]
+saving image..
+saving stats..
+stripe 183 from 203
+f6..
+HH..  ML2D, elapsed time = 210 [sec]
+HV..  ML2D, elapsed time = 210 [sec]
+VH..  ML2D, elapsed time = 205 [sec]
+VV..  ML2D, elapsed time = 206 [sec]
+saving image..
+saving stats..
+stripe 184 from 203
+f6..
+HH..  ML2D, elapsed time = 204 [sec]
+HV..  ML2D, elapsed time = 203 [sec]
+VH..  ML2D, elapsed time = 203 [sec]
+VV..  ML2D, elapsed time = 205 [sec]
+saving image..
+saving stats..
+stripe 185 from 203
+f6..
+HH..  ML2D, elapsed time = 227 [sec]
+HV..  ML2D, elapsed time = 230 [sec]
+VH..  ML2D, elapsed time = 229 [sec]
+VV..  ML2D, elapsed time = 227 [sec]
+saving image..
+saving stats..
+stripe 186 from 203
+f6..
+HH..  ML2D, elapsed time = 225 [sec]
+HV..  ML2D, elapsed time = 223 [sec]
+VH..  ML2D, elapsed time = 228 [sec]
+VV..  ML2D, elapsed time = 226 [sec]
+saving image..
+saving stats..
+stripe 187 from 203
+f6..
+HH..  ML2D, elapsed time = 232 [sec]
+HV..  ML2D, elapsed time = 235 [sec]
+VH..  ML2D, elapsed time = 236 [sec]
+VV..  ML2D, elapsed time = 236 [sec]
+saving image..
+saving stats..
+stripe 188 from 203
+f6..
+HH..  ML2D, elapsed time = 226 [sec]
+HV..  ML2D, elapsed time = 220 [sec]
+VH..  ML2D, elapsed time = 218 [sec]
+VV..  ML2D, elapsed time = 220 [sec]
+saving image..
+saving stats..
+stripe 189 from 203
+f6..
+HH..  ML2D, elapsed time = 223 [sec]
+HV..  ML2D, elapsed time = 223 [sec]
+VH..  ML2D, elapsed time = 224 [sec]
+VV..  ML2D, elapsed time = 227 [sec]
+saving image..
+saving stats..
+stripe 190 from 203
+f6..
+HH..  ML2D, elapsed time = 255 [sec]
+HV..  ML2D, elapsed time = 253 [sec]
+VH..  ML2D, elapsed time = 253 [sec]
+VV..  ML2D, elapsed time = 253 [sec]
+saving image..
+saving stats..
+stripe 191 from 203
+f6..
+HH..  ML2D, elapsed time = 227 [sec]
+HV..  ML2D, elapsed time = 229 [sec]
+VH..  ML2D, elapsed time = 229 [sec]
+VV..  ML2D, elapsed time = 229 [sec]
+saving image..
+saving stats..
+stripe 192 from 203
+f6..
+HH..  ML2D, elapsed time = 219 [sec]
+HV..  ML2D, elapsed time = 216 [sec]
+VH..  ML2D, elapsed time = 217 [sec]
+VV..  ML2D, elapsed time = 219 [sec]
+saving image..
+saving stats..
+stripe 193 from 203
+f6..
+HH..  ML2D, elapsed time = 269 [sec]
+HV..  ML2D, elapsed time = 272 [sec]
+VH..  ML2D, elapsed time = 273 [sec]
+VV..  ML2D, elapsed time = 274 [sec]
+saving image..
+saving stats..
+stripe 194 from 203
+f6..
+HH..  ML2D, elapsed time = 234 [sec]
+HV..  ML2D, elapsed time = 231 [sec]
+VH..  ML2D, elapsed time = 230 [sec]
+VV..  ML2D, elapsed time = 231 [sec]
+saving image..
+saving stats..
+stripe 195 from 203
+f6..
+HH..  ML2D, elapsed time = 254 [sec]
+HV..  ML2D, elapsed time = 255 [sec]
+VH..  ML2D, elapsed time = 256 [sec]
+VV..  ML2D, elapsed time = 258 [sec]
+saving image..
+saving stats..
+stripe 196 from 203
+f6..
+HH..  ML2D, elapsed time = 216 [sec]
+HV..  ML2D, elapsed time = 215 [sec]
+VH..  ML2D, elapsed time = 216 [sec]
+VV..  ML2D, elapsed time = 216 [sec]
+saving image..
+saving stats..
+stripe 197 from 203
+f6..
+HH..  ML2D, elapsed time = 226 [sec]
+HV..  ML2D, elapsed time = 227 [sec]
+VH..  ML2D, elapsed time = 227 [sec]
+VV..  ML2D, elapsed time = 229 [sec]
+saving image..
+saving stats..
+stripe 198 from 203
+f6..
+HH..  ML2D, elapsed time = 223 [sec]
+HV..  ML2D, elapsed time = 221 [sec]
+VH..  ML2D, elapsed time = 224 [sec]
+VV..  ML2D, elapsed time = 223 [sec]
+saving image..
+saving stats..
+stripe 199 from 203
+f6..
+HH..  ML2D, elapsed time = 228 [sec]
+HV..  ML2D, elapsed time = 228 [sec]
+VH..  ML2D, elapsed time = 229 [sec]
+VV..  ML2D, elapsed time = 231 [sec]
+saving image..
+saving stats..
+stripe 200 from 203
+f6..
+HH..  ML2D, elapsed time = 222 [sec]
+HV..  ML2D, elapsed time = 217 [sec]
+VH..  ML2D, elapsed time = 220 [sec]
+VV..  ML2D, elapsed time = 219 [sec]
+saving image..
+saving stats..
+stripe 201 from 203
+f6..
+HH..  ML2D, elapsed time = 223 [sec]
+HV..  ML2D, elapsed time = 222 [sec]
+VH..  ML2D, elapsed time = 222 [sec]
+VV..  ML2D, elapsed time = 223 [sec]
+saving image..
+saving stats..
+stripe 202 from 203
+f6..
+HH..  ML2D, elapsed time = 229 [sec]
+HV..  ML2D, elapsed time = 231 [sec]
+VH..  ML2D, elapsed time = 232 [sec]
+VV..  ML2D, elapsed time = 231 [sec]
+saving image..
+saving stats..
+stripe 203 from 203
+f6..
+HH..  ML2D, elapsed time = 222 [sec]
+HV..  ML2D, elapsed time = 224 [sec]
+VH..  ML2D, elapsed time = 221 [sec]
+VV..  ML2D, elapsed time = 220 [sec]
+saving image..
+saving stats..
+Total processing time: 173548.601708
