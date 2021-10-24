@@ -40,8 +40,12 @@ def encode_image(image, resize):
 
 
 # USER DATA
-filt = 4
+filt = 12  # 2,4,6,8
 resize = 640
+split = 'Test'  # 'Train', 'Val', 'Test'
+sar_ch = [0,1,2,3]
+
+
 print(f'using multi-look filter: {filt}, and resize to: {resize}x{resize}')
 
 # INITIALIZE
@@ -62,13 +66,11 @@ print(f'found total: {len(acq_list)}')
 pr_slc_dir = '../../processed'
 or_slc_dir = '../../expanded-dataset'
 
-print('reading labels..')
-gt20_tr_gdf = gpd.read_file('../../expanded/geojson_buildings/SN6_AOI_11_Rotterdam_Buildings_GT20sqm-Train.geojson')
+print(f'reading {split} set labels..')
+gt20_gdf = gpd.read_file(f'../../expanded/geojson_buildings/SN6_AOI_11_Rotterdam_Buildings_GT20sqm-{split}.geojson')
 
 # OUTPUT
-out_dir = f'../../tfrec{resize}_f{filt}'
-
-
+out_dir = f'../../tfrec{resize}_f{filt}_{split}'
 
 
 start = time.time()
@@ -85,7 +87,7 @@ for na, acq in enumerate(acq_list):
     or_slc = rs.open(or_slc_path)
 
     cr_label = feat.geometry_mask(
-        gt20_tr_gdf.geometry,
+        gt20_gdf.geometry,
         out_shape=(or_slc.height, or_slc.width),
         transform=or_slc.transform,
         invert=True)
@@ -110,7 +112,7 @@ for na, acq in enumerate(acq_list):
     with tf.io.TFRecordWriter(tf_rec_fn) as writer:
         for nt, tile_idx in enumerate(tile_list):
             # grab the data
-            ex_img, ex_mask = tile_image_mask(pr_slc, [0,3,2], cr_label,
+            ex_img, ex_mask = tile_image_mask(pr_slc, sar_ch, cr_label,
                                               tile_idx, bound_idx)
             
             # process image and mask
@@ -131,7 +133,7 @@ for na, acq in enumerate(acq_list):
 
     # save as image instead of tfrec
     # for nt, tile_idx in enumerate(tile_list):
-    #     ex_img, ex_mask = tile_image_mask(pr_slc, [0,3,2], cr_label,
+    #     ex_img, ex_mask = tile_image_mask(pr_slc, sar_ch, cr_label,
     #                                     tile_idx, bound_idx)
 
     #     # save image

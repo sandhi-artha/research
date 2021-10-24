@@ -37,7 +37,7 @@ tnow = now;
 dnt = datetime(tnow,'ConvertFrom','datenum');
 fprintf('Start job: %s\n', dnt);
 
-filt = [6];
+filt = [12];
 pol = ["HH", "HV", "VH", "VV"];
 
 err = ["Missing filenames"];
@@ -47,7 +47,8 @@ stats = struct('f',{}, 'pol',{}, 'pre_norm_min',{}, 'pre_norm_max',{});
 t_process = tic;
 
 %for all acquistion_date
-for ia = 1:length(f_names)
+% for ia = 101:140
+for ia = 141:length(f_names)
     fprintf('stripe %d from %d\n', ia, length(f_names))
     
     %collect filenames for all 4 polarimetry
