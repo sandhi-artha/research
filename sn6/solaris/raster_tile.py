@@ -147,7 +147,7 @@ class RasterTiler(object):
             else:
                 print('Resampling is set to None')
 
-    def tile(self, src, dest_dir=None, channel_idxs=None, nodata=None,
+    def tile(self, src, ver_name, dest_dir=None, channel_idxs=None, nodata=None,
              alpha=None, restrict_to_aoi=False,
              dest_fname_base=None, nodata_threshold = None):
         """An object to tile geospatial image strips into smaller pieces.
@@ -184,27 +184,34 @@ class RasterTiler(object):
         if self.verbose:
             print('Beginning tiling...')
         self.tile_paths = []
+        tile_id = 0  # keeping track of tile number for each stripe
         if nodata_threshold is not None:
             if nodata_threshold > 1:
                 raise ValueError("nodata_threshold should be expressed as a float less than 1.")
             print("nodata value threshold supplied, filtering based on this percentage.")
             new_tile_bounds = []
             for tile_data, mask, profile, tb in tqdm(tile_gen):
-                nodata_count = np.logical_or.reduce((tile_data == profile['nodata']), axis=0).sum()
+                if np.isnan(profile['nodata']):
+                    nodata_count = np.count_nonzero(np.isnan(tile_data))
+                else:
+                    nodata_count = np.logical_or.reduce((tile_data == profile['nodata']), axis=0).sum()
                 nodata_perc = nodata_count / (tile_data.shape[1] * tile_data.shape[2])
                 if nodata_perc < nodata_threshold:
                     dest_path = self.save_tile(
-                        tile_data, mask, profile, dest_fname_base)
+                        tile_data, mask, profile, tile_id, ver_name, dest_fname_base)
                     self.tile_paths.append(dest_path)
                     new_tile_bounds.append(tb)
+                    tile_id += 1
                 else:
                     print("{} of nodata is over the nodata_threshold, tile not saved.".format(nodata_perc))
             self.tile_bounds = new_tile_bounds # only keep the tile bounds that make it past the nodata threshold
         else:
             for tile_data, mask, profile, tb in tqdm(tile_gen):
                 dest_path = self.save_tile(
-                    tile_data, mask, profile, dest_fname_base)
+                    tile_data, mask, profile, tile_id, ver_name, dest_fname_base)
                 self.tile_paths.append(dest_path)
+                tile_id += 1
+
         if self.verbose:
             print('Tiling complete. Cleaning up...')
         self.src.close()
@@ -413,8 +420,9 @@ class RasterTiler(object):
 
             yield tile_data, mask, profile, tb
 
-    def save_tile(self, tile_data, mask, profile, dest_fname_base=None):
+    def save_tile(self, tile_data, mask, profile, i, ver_name, dest_fname_base=None):
         """Save a tile created by ``Tiler.tile_generator()``."""
+        tile_id = str(i).zfill(4)  # give zero padding for easier sorting
         if dest_fname_base is None:
             dest_fname_root = os.path.splitext(
                 os.path.split(self.src_path)[1])[0]
@@ -428,8 +436,8 @@ class RasterTiler(object):
         else:
             dest_fname = '{}_{}_{}.tif'.format(
                 dest_fname_root,
-                int(profile['transform'][2]),
-                int(profile['transform'][5]))
+                ver_name,
+                tile_id)
         # if self.cog_output:
         #     dest_path = os.path.join(self.dest_dir, 'tmp.tif')
         # else:
