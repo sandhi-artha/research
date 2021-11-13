@@ -192,7 +192,7 @@ class RasterTiler(object):
             new_tile_bounds = []
             for tile_data, mask, profile, tb in tqdm(tile_gen):
                 if np.isnan(profile['nodata']):
-                    nodata_count = np.count_nonzero(np.isnan(tile_data))
+                    nodata_count = np.count_nonzero(np.isnan(tile_data[0]))
                 else:
                     nodata_count = np.logical_or.reduce((tile_data == profile['nodata']), axis=0).sum()
                 nodata_perc = nodata_count / (tile_data.shape[1] * tile_data.shape[2])
