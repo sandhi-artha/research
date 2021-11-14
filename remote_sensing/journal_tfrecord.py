@@ -19,6 +19,8 @@ from lib.raster import read_slc, fix_orient
 from lib.tiling import get_region_index, get_tile_index, tile_image_mask
 
 
+# script to generate tfrecords using ml2d filter from dr. gromek
+# outputs a tfrec for each processed SLC
 
 
 # TFRecord data type

@@ -9,7 +9,7 @@ import uuid  # for save image
 import pandas as pd  # for ImageStats
 import matplotlib.pyplot as plt
 
-from pipesegment import PipeSegment, LoadSegment
+from .pipesegment import PipeSegment, LoadSegment
 
 class Image:
     def __init__(self, data, name='image', metadata={}):

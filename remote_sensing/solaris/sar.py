@@ -7,9 +7,9 @@ import math  # for nan
 import uuid
 
 import json  # for capella scale factor
-from pipesegment import PipeSegment
-from image import Image
-import image
+from .pipesegment import PipeSegment
+from .image import Image
+from . import image
 
 class CapellaScaleFactor(PipeSegment):
     """
