@@ -15,7 +15,7 @@ from shapely.geometry import MultiLineString, MultiPolygon, mapping, box, shape
 from shapely.geometry.collection import GeometryCollection
 from shapely.ops import cascaded_union
 from osgeo import osr
-import gdal
+from osgeo import gdal
 import json
 from warnings import warn
 import sys
