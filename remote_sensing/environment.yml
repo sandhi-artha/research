@@ -1,15 +1,15 @@
-name: sn6-tf
+name: sn-tf
 channels:
-  - defaults
   - conda-forge
-  - anaconda
+  - defaults
 dependencies:
   - geopandas
-  - matplotlib
+  - jupyter
   - numpy
-  - pandas
-  - pillow=7.1.2  # cur version exits after reading large .tif and convert to numpy
+  - matplotlib
+  - opencv
   - python=3.7
+  - pandas
   - rasterio
-  - scipy
-  - tensorflow
+  - shapely
+  - tensorflow == 2.5
