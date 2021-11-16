@@ -106,7 +106,7 @@ class RasterTiler(object):
                  dest_tile_size=None, dest_metric_size=False,
                  aoi_boundary=None, nodata=None, alpha=None,
                  force_load_cog=False, resampling=None, tile_bounds=None,
-                 verbose=False):
+                 verbose=False, stride=(0,0)):
         # set up attributes
         if verbose:
             print("Initializing Tiler...")
@@ -133,6 +133,7 @@ class RasterTiler(object):
         self.tile_paths = []  # retains the paths of the last call to .tile()
 #        self.cog_output = cog_output
         self.verbose = verbose
+        self.stride = stride
         if self.verbose:
             print('Tiler initialized.')
             print('dest_dir: {}'.format(self.dest_dir))
@@ -146,6 +147,7 @@ class RasterTiler(object):
                 print('Resampling is set to {}'.format(self.resampling))
             else:
                 print('Resampling is set to None')
+            print('stride: {}'.format(self.stride))
 
     def tile(self, src, dest_dir=None, channel_idxs=None, nodata=None,
              alpha=None, restrict_to_aoi=False,
@@ -331,15 +333,16 @@ class RasterTiler(object):
         if getattr(self, 'tile_bounds', None) is None:
             self.get_tile_bounds()
 
-        for tb in self.tile_bounds:
+        for i,tb in enumerate(self.tile_bounds):
             # removing the following line until COG functionality implemented
             if True:  # not self.is_cog or self.force_load_cog:
                 window = rasterio.windows.from_bounds(
                     *tb, transform=self.src.transform,
                     width=self.src_tile_size[1],
                     height=self.src_tile_size[0])
-                print('reading data from window')
-                print(self.nodata)
+                print(f'tiling {i} out of {len(self.tile_bounds)}')
+                # print('reading data from window')
+                # print(self.nodata)
                 if self.src.count != 1:
                     src_data = self.src.read(
                         window=window,
@@ -525,7 +528,7 @@ class RasterTiler(object):
                 self.aoi_boundary = list(self.src.bounds)
 
         self.tile_bounds = split_geom(geometry=self.aoi_boundary, tile_size=self.src_tile_size, resolution=(
-            self.src.transform[0], -self.src.transform[4]), use_projection_units=self.use_src_metric_size, src_img=self.src)
+            self.src.transform[0], -self.src.transform[4]), use_projection_units=self.use_src_metric_size, src_img=self.src, stride=self.stride)
 
     def load_src_vrt(self):
         """Load a source dataset's VRT into the destination CRS."""
