@@ -1,6 +1,6 @@
 import os
-from core import _check_df_load, _check_gdf_load, _check_rasterio_im_load
-from core import _check_geom, _check_crs
+from .core import _check_df_load, _check_gdf_load, _check_rasterio_im_load
+from .core import _check_geom, _check_crs
 import numpy as np
 import pandas as pd
 import geopandas as gpd
@@ -741,7 +741,7 @@ def polygon_to_coco(polygon):
 
 
 def split_geom(geometry, tile_size, resolution=None,
-               use_projection_units=False, src_img=None):
+               use_projection_units=False, src_img=None, stride=(0,0)):
     """Splits a vector into approximately equal sized tiles.
 
     Adapted from @lossyrob's Gist__
@@ -774,6 +774,8 @@ def split_geom(geometry, tile_size, resolution=None,
         intersected and the result of the intersection will be tiled. Useful in cases where the extent of
         collected labels and source imagery partially overlap. The src_img must have the same projection units
         as the geometry.
+    stride:  `tuple` of `int`
+        stride in ``(y,x)`` coordinates, just like tile_size. stride is overlapping between adjacent tiles
 
     Returns
     -------
@@ -807,8 +809,11 @@ def split_geom(geometry, tile_size, resolution=None,
             resolution = (resolution, resolution)
         tmp_tile_size = [tile_size[0]*resolution[0],
                          tile_size[1]*resolution[1]]
+        tmp_stride = [stride[0]*resolution[0],
+                      stride[1]*resolution[1]]
     else:
         tmp_tile_size = tile_size
+        tmp_stride = stride
         
     if src_img is not None:
         src_img = _check_rasterio_im_load(src_img)
@@ -823,12 +828,18 @@ def split_geom(geometry, tile_size, resolution=None,
     ymax = bounds[3]
     x_extent = xmax - xmin
     y_extent = ymax - ymin
-    x_steps = np.ceil(x_extent/tmp_tile_size[1])
-    y_steps = np.ceil(y_extent/tmp_tile_size[0])
-    x_mins = np.arange(xmin, xmin + tmp_tile_size[1]*x_steps,
-                       tmp_tile_size[1])
-    y_mins = np.arange(ymin, ymin + tmp_tile_size[0]*y_steps,
-                       tmp_tile_size[0])
+    
+    # x_extent-tmp_stride bcz all tiles except last has tile_size=tile_size-stride
+    x_steps = np.ceil((x_extent-tmp_stride[1]) / (tmp_tile_size[1]-tmp_stride[1]))
+    y_steps = np.ceil((y_extent-tmp_stride[0]) / (tmp_tile_size[0]-tmp_stride[0]))
+
+    # again, when there's stride, all tile_size is basically subtracted by stride
+    x_mins = np.arange(xmin,
+                    xmin + (tmp_tile_size[1]-tmp_stride[1])*x_steps,
+                    tmp_tile_size[1]-tmp_stride[1])
+    y_mins = np.arange(ymin,
+                    ymin + (tmp_tile_size[0]-tmp_stride[0])*y_steps,
+                    tmp_tile_size[0]-tmp_stride[0])
     tile_bounds = [
         (i, j, i+tmp_tile_size[1], j+tmp_tile_size[0])
         for i in x_mins for j in y_mins if not geometry.intersection(

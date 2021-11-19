@@ -3,8 +3,8 @@ import rasterio
 from rasterio.warp import Resampling, calculate_default_transform
 from rasterio.vrt import WarpedVRT
 from rasterio.mask import mask as rasterio_mask
-from core import _check_crs, _check_rasterio_im_load
-from geo import reproject, split_geom, raster_get_projection_unit
+from .core import _check_crs, _check_rasterio_im_load
+from .geo import reproject, split_geom, raster_get_projection_unit
 
 import numpy as np
 from shapely.geometry import box

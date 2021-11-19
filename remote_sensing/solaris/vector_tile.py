@@ -2,10 +2,10 @@ import os
 import numpy as np
 from shapely.geometry import box, Polygon
 import geopandas as gpd
-from core import _check_gdf_load, _check_crs
-from core import save_empty_geojson
-from geo import get_projection_unit, split_multi_geometries
-from geo import reproject_geometry
+from .core import _check_gdf_load, _check_crs
+from .core import save_empty_geojson
+from .geo import get_projection_unit, split_multi_geometries
+from .geo import reproject_geometry
 from tqdm.auto import tqdm
 
 
