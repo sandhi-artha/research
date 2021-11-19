@@ -7,6 +7,8 @@ import os
 
 
 class SarPreproc(pipesegment.PipeSegment):
+    """Process 1 SLC SAR stripe
+    """
     def __init__(self,
                  cfg,
                  timestamp='20190823162315_20190823162606',
@@ -16,14 +18,6 @@ class SarPreproc(pipesegment.PipeSegment):
                  ):
         super().__init__()
         out_path = os.path.join(out_dir, out_fn)
-
-        # load polarimetry slc rasters and correct with capella's scale factor
-        # quads = []
-        # for pol in cfg['pol']:
-            # in_fn = os.path.join(input_dir, 'CAPELLA_ARL_SM_SLC_' + pol + '_' + timestamp + '.tif')
-            # quads.append(
-            #     image.LoadImage(in_fn) * sar.CapellaScaleFactor()
-            # )
 
         quads = [
             image.LoadImage(os.path.join(input_dir, 'CAPELLA_ARL_SM_SLC_'

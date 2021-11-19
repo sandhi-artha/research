@@ -7,5 +7,9 @@ cfg = {
     'project'       : 'sensor',
     'name'          : 'base',
     'rotation'      : 0,
-    'flip'          : 0
+    'flip'          : 0,
+    'in_dir'        : '../../dataset/sn6-expanded',
+    'out_dir'       : '../../dataset/sensor',
+    'label_dir'     : '../../dataset/spacenet6-challenge/expanded/exp_geojson_buildings',
+    'verbose'       : 0,
 }

@@ -8,7 +8,7 @@
 
 # import matplotlib.pyplot as plt
 # import numpy as np
-# import os
+import os
 
 # import rasterio as rs
 # from rasterio import plot
@@ -24,18 +24,45 @@ import pickle
 
 from dataset_cfg import cfg
 from sar_preproc import SarPreproc
+from tile_gen import get_label_gdf, raster_vector_tiling
 
-in_dir = '../../expanded-dataset'
-out_dir = f'../../sensor'
+from shapely.geometry import box
 
-
+# load all timestamps and their sar orientation
 with open('timestamp_orientation.pickle','rb') as f:
     time_orient = pickle.load(f)
 
-for to in time_orient[:3]:
-    print(f'processing: {to}')
+# split dataset based on each label split
+print('loading labels')
+labels = {
+    'train' : get_label_gdf('train', cfg["label_dir"]),
+    'val'   : get_label_gdf('val', cfg["label_dir"]),
+    'test'  : get_label_gdf('test', cfg["label_dir"])
+}
+bounds = {
+    'train' : box(*labels["train"].total_bounds),
+    'val'   : box(*labels["val"].total_bounds),
+    'test'  : box(*labels["test"].total_bounds)
+}
+print(f'labels loaded')
+
+# loop through timestamps
+for to in time_orient[:2]:
+    print(f'processing raster for {to}')
     timestamp = to[:-2]
     orient = to[-1]
-    out_fn = f'{to}.tif'
-    sar_preproc = SarPreproc(cfg, timestamp, in_dir, out_dir, out_fn)
+
+    # process SAR
+    out_fn = 'output.tif'  # f'{to}.tif'  # give specific output
+    sar_preproc = SarPreproc(cfg, timestamp, cfg["in_dir"], cfg["out_dir"], out_fn)
     sar_preproc()
+
+    print(f'creating tiles')
+    # tile raster and vector
+    tile_in_path = os.path.join(cfg["out_dir"], out_fn)  # output.tif path
+    tile_out_path = os.path.join(cfg["out_dir"], cfg["name"])
+    raster_dict, vector_dict = raster_vector_tiling(
+        cfg, labels, bounds, timestamp, tile_in_path, tile_out_path)
+    
+    print('complete')
+    break
