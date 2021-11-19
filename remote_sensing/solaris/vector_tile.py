@@ -92,7 +92,8 @@ class VectorTiler(object):
                                        min_partial_perc,
                                        obj_id_col=obj_id_col)
         self.tile_paths = []
-        for tile_gdf, tb in tqdm(tile_gen):
+        for tile_gdf, tb, i in tqdm(tile_gen):
+            tile_id = str(i).zfill(4)  # give zero padding for easier sorting
             if self.proj_unit not in ['meter', 'metre']:
                 dest_path = os.path.join(
                     self.dest_dir, '{}_{}_{}{}'.format(dest_fname_base,
@@ -100,11 +101,10 @@ class VectorTiler(object):
                                                        np.round(tb[3], 3),
                                                        output_ext))
             else:
-                dest_path = os.path.join(
-                    self.dest_dir, '{}_{}_{}{}'.format(dest_fname_base,
-                                                       int(tb[0]),
-                                                       int(tb[3]),
-                                                       output_ext))
+                dest_path = os.path.join(self.dest_dir, '{}_{}{}'.format(
+                    dest_fname_base,
+                    tile_id,
+                    output_ext))
             self.tile_paths.append(dest_path)
             if len(tile_gdf) > 0:
                 tile_gdf.to_file(dest_path, driver='GeoJSON')
@@ -192,7 +192,7 @@ class VectorTiler(object):
                 tile_gdf = tile_gdf.to_crs(crs=self.dest_crs.to_wkt())
             if split_multi_geoms:
                 split_multi_geometries(tile_gdf, obj_id_col=obj_id_col)
-            yield tile_gdf, tb
+            yield tile_gdf, tb, i
 
 
 def search_gdf_polygon(gdf, tile_polygon):
@@ -225,7 +225,7 @@ def search_gdf_polygon(gdf, tile_polygon):
 
 
 def clip_gdf(gdf, tile_bounds, min_partial_perc=0.0, geom_type="Polygon",
-             use_sindex=True, verbose=False):
+             use_sindex=False, verbose=False):
     """Clip GDF to a provided polygon.
 
     Clips objects within `gdf` to the region defined by
