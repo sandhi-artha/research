@@ -26,18 +26,19 @@ def raster_vector_tiling(cfg, labels, bounds, timestamp, in_path, out_path):
             cfg["stride"]
         )
 
+        print(f'tiling {split} split..')
         # tile the raster
         raster_tiler = raster_tile.RasterTiler(dest_dir=os.path.join(out_path,'raster'), 
                                        src_tile_size=(640, 640),
                                        aoi_boundary=bounds[split],
-                                       verbose=True,
+                                       verbose=cfg["verbose"],
                                        stride=(cfg["stride"],cfg["stride"]))
         
         raster_tiler.tile(in_path, dest_fname_base=fn, nodata_threshold=0.5)
 
         # use created tiles for vector tiling
         vector_tiler = vector_tile.VectorTiler(dest_dir=os.path.join(out_path,'vector'),
-                                               super_verbose=True)
+                                               super_verbose=cfg["verbose"])
         
         vector_tiler.tile(labels[split], tile_bounds=raster_tiler.tile_bounds,
                           split_multi_geoms=False, dest_fname_base=fn)

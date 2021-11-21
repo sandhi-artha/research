@@ -8,8 +8,12 @@ cfg = {
     'name'          : 'base',
     'rotation'      : 0,
     'flip'          : 0,
-    'in_dir'        : '../../dataset/sn6-expanded',
-    'out_dir'       : '../../dataset/sensor',
+    'in_dir'        : '../../dataset/sn6-expanded',  # where the SLC stripes located
+    'out_dir'       : '../../dataset/sensor',  # where the tiles will be stored
     'label_dir'     : '../../dataset/spacenet6-challenge/expanded/exp_geojson_buildings',
     'verbose'       : 0,
+    # post-tiling
+    'channel'       : [1,4,3],
+    'out_precision' : 32,  # 8, 16 or 32
+    'clip_thresh'   : 80, # num of pixels to clip
 }
