@@ -20,7 +20,9 @@ import os
 # import pandas as pd
 
 # import glob
+import json
 import pickle
+import time
 
 from dataset_cfg import cfg
 from sar_preproc import SarPreproc
@@ -48,39 +50,48 @@ bounds = {
 print(f'labels loaded')
 
 # loop through timestamps
-# for to in time_orient[:2]:
-#     print(f'processing raster for {to}')
-#     timestamp = to[:-2]
-#     orient = to[-1]
+start = time.time()
+for i,to in enumerate(time_orient[:50]):
+    print(f'processing raster {to}.. {i} of {len(time_orient)}')
+    timestamp = to[:-2]
+    orient = to[-1]
 
-#     # process SAR
-#     out_fn = 'output.tif'  # f'{to}.tif'  # give specific output
-#     sar_preproc = SarPreproc(cfg, timestamp, cfg["in_dir"], cfg["out_dir"], out_fn)
-#     sar_preproc()
+    # process SAR
+    out_fn = 'output.tif'  # f'{to}.tif'  # give specific output
+    sar_preproc = SarPreproc(cfg, timestamp, cfg["in_dir"], cfg["out_dir"], out_fn)
+    sar_preproc()
 
-#     print(f'creating tiles')
-#     # tile raster and vector
-#     tile_in_path = os.path.join(cfg["out_dir"], out_fn)  # output.tif path
-#     tile_out_path = os.path.join(cfg["out_dir"], cfg["name"])
-#     raster_dict, vector_dict = raster_vector_tiling(
-#         cfg, labels, bounds, timestamp, tile_in_path, tile_out_path)
+    print(f'creating tiles')
+    # tile raster and vector
+    tile_in_path = os.path.join(cfg["out_dir"], out_fn)  # output.tif path
+    tile_out_path = os.path.join(cfg["out_dir"], cfg["name"])
+    raster_dict, vector_dict = raster_vector_tiling(
+        cfg, labels, bounds, timestamp, tile_in_path, tile_out_path)
     
-#     print('tiling complete')
-#     break
+end = time.time()
+print(f'tiling complete in {(end-start):.1f}s')
 
 # write tfrecords
+start = time.time()
 in_path = tile_out_path = os.path.join(cfg["out_dir"], cfg["name"])
 for split in ['train','val','test']:
     # grab and shuffle raster-vector file paths
-    fp = tfrec.get_tile_paths(in_path, split, shuffle=True)
+    fp = tfrec.get_tile_paths(in_path, split, shuffle=True, perc_data=cfg["perc_data"])
     
     # create save directory if not exist
-    base_dir = os.path.join(cfg["out_dir"], 'tfrecord')
+    base_dir = os.path.join(cfg["out_dir"], cfg["name"], 'tfrecord')
     if not os.path.isdir(base_dir):
         os.makedirs(base_dir)
     
     # name of tfrec file
-    base_fn = f'tfrecord/{split}'
     base_fn = os.path.join(base_dir, split)
-    print(base_fn)
     tfrec.create_tfrecord(*fp, cfg, base_fn)
+
+end = time.time()
+print(f'tfrecords created in {(end-start):.1f}s')
+
+cfg_fn = os.path.join(cfg["out_dir"], cfg["name"], 'cfg.json')
+with open(cfg_fn, 'w') as f:
+    json.dump(cfg, f)
+
+print('config saved!')

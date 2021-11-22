@@ -8,10 +8,11 @@ import rasterio as rs
 from rasterio import features as feat
 
 from solaris.vector_mask import mask_to_poly_geojson
+from solaris.core import save_empty_geojson
 from .proc import hist_clip, to_hwc, normalize
 
 
-def get_tile_paths(in_path, split, shuffle=False):
+def get_tile_paths(in_path, split, shuffle=False, perc_data=1.0):
     """
     in_path : str
         path where tiles are stored (has [raster, vector])
@@ -19,6 +20,8 @@ def get_tile_paths(in_path, split, shuffle=False):
         'train', 'val', or 'test'
     shuffle : bool
         shuffle using a seed
+    perc_data : float [0,1]
+        only applies to train split, percentage of examples to be loaded
     returns : [raster_paths, vector_paths]
         list of all raster paths and vector paths for given split
     """
@@ -28,6 +31,11 @@ def get_tile_paths(in_path, split, shuffle=False):
 
     if shuffle:
         random.Random(17).shuffle(raster_paths)
+    if split=='train':
+        tot_len = len(raster_paths)
+        per_len = int(np.ceil(tot_len*perc_data))
+        print(f'loading {per_len} out of {tot_len} training data')
+        raster_paths = raster_paths[:per_len]
 
     vector_paths = []
     for rp in raster_paths:
@@ -76,8 +84,9 @@ def serialize_image(image, out_precision=32):
 
 
 ### PROC LABEL ###
-def clip_vector_mask(raster_path, vector):
+def clip_vector_mask(raster_path, vector_path, save=True):
     """reads the mask from raster, and clips the vector using it
+    when input vector is empty, will also return an empty gdf
     raster_path : str
         path to .tif raster that have mask
     vector : geopandas gdf
@@ -89,10 +98,21 @@ def clip_vector_mask(raster_path, vector):
         do_transform=True
     )
 
-    raster.close()  # close the opened dataset
+    # read vector and clip it
+    vector = gpd.read_file(vector_path)
+    vector_fix = vector.clip(mask_gdf)
 
-    # clip vector with mask gdf and return
-    return vector.clip(mask_gdf)
+    if save:
+        save_fn = vector_path.replace('vector', 'vector_fix')
+        if not os.path.isdir(os.path.dirname(save_fn)):
+            os.makedirs(os.path.dirname(save_fn))
+        if vector_fix.shape[0] == 0:
+            save_empty_geojson(save_fn, crs=raster.crs)
+        else:
+            vector_fix.to_file(save_fn, driver='GeoJSON')
+
+    raster.close()  # close the opened dataset
+    return vector_fix
 
 def get_vector_bin(raster_path, vector):
     """
@@ -121,11 +141,12 @@ def get_vector_bin(raster_path, vector):
 
 def get_label(raster_path, vector_path):
     """
+    save : bool
+        saves the fixed gdf vector_gdf dir, same level with vector dir
     returns : [bin_mask, vector]
         bin_mask is type bool, vector is type geodataframe
     """
-    vector = gpd.read_file(vector_path)
-    vector_fix = clip_vector_mask(raster_path, vector)
+    vector_fix = clip_vector_mask(raster_path, vector_path)
     bin_mask = get_vector_bin(raster_path, vector_fix)
     return bin_mask, vector_fix
 
@@ -168,13 +189,14 @@ def create_tfrecord(raster_paths, vector_paths, cfg, base_fn):
 
         with tf.io.TFRecordWriter(fn) as writer:
             for j in range(size2):
-                image = get_image(raster_paths[j], cfg['channel'], cfg['clip_thresh'])
+                idx = i*size+j  # ith tfrec * num_img per tfrec as the start of this iteration
+                image = get_image(raster_paths[idx], cfg['channel'], cfg['clip_thresh'])
                 image_serial = serialize_image(image, cfg['out_precision'])
 
-                label, label_gdf = get_label(raster_paths[j], vector_paths[j])
+                label, label_gdf = get_label(raster_paths[idx], vector_paths[idx])
                 label_serial = serialize_label(label)
 
-                fn = os.path.basename(raster_paths[j]).split('.')[0]
+                fn = os.path.basename(raster_paths[idx]).split('.')[0]
 
                 feature = {
                     'image': _bytes_feature(image_serial.numpy()),
