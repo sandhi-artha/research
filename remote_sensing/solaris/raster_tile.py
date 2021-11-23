@@ -190,7 +190,7 @@ class RasterTiler(object):
         if nodata_threshold is not None:
             if nodata_threshold > 1:
                 raise ValueError("nodata_threshold should be expressed as a float less than 1.")
-            print("nodata value threshold supplied, filtering based on this percentage.")
+            # print("nodata value threshold supplied, filtering based on this percentage.")
             new_tile_bounds = []
             for tile_data, mask, profile, tb in tqdm(tile_gen):
                 if np.isnan(profile['nodata']):
@@ -205,7 +205,8 @@ class RasterTiler(object):
                     new_tile_bounds.append(tb)
                     tile_id += 1
                 else:
-                    print("{} of nodata is over the nodata_threshold, tile not saved.".format(nodata_perc))
+                    if self.verbose==2:
+                        print("{} of nodata is over the nodata_threshold, tile not saved.".format(nodata_perc))
             self.tile_bounds = new_tile_bounds # only keep the tile bounds that make it past the nodata threshold
         else:
             for tile_data, mask, profile, tb in tqdm(tile_gen):
@@ -332,6 +333,7 @@ class RasterTiler(object):
 
         if getattr(self, 'tile_bounds', None) is None:
             self.get_tile_bounds()
+            print(f'tiling {len(self.tile_bounds)} tiles')
 
         for i,tb in enumerate(self.tile_bounds):
             # removing the following line until COG functionality implemented
@@ -340,7 +342,8 @@ class RasterTiler(object):
                     *tb, transform=self.src.transform,
                     width=self.src_tile_size[1],
                     height=self.src_tile_size[0])
-                print(f'tiling {i} out of {len(self.tile_bounds)}')
+                if self.verbose == 2:
+                    print(f'tiling {i} out of {len(self.tile_bounds)}')
                 # print('reading data from window')
                 # print(self.nodata)
                 if self.src.count != 1:
