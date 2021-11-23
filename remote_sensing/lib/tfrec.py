@@ -171,14 +171,15 @@ def _bytes_feature(value):
 
 
 ### CREATE AND READ ###
-def create_tfrecord(raster_paths, vector_paths, cfg, base_fn):
+def create_tfrecord(raster_paths, vector_paths, cfg, base_fn, size):
     """
     100 images per tfrecord
     image in float32 serialized
     mask in binary serialized
+    size : int
+        examples per tfrecord. for 3ch, 640 res, uint8, use 100 -> ~150MB/file
     output : {base_fn}01-100.tfrec
     """
-    size = 100  # examples per tfrecord
     tot_ex = len(raster_paths)  # total examples
     tot_tf = int(np.ceil(tot_ex/size))  # total tfrecords
 
@@ -190,7 +191,7 @@ def create_tfrecord(raster_paths, vector_paths, cfg, base_fn):
         with tf.io.TFRecordWriter(fn) as writer:
             for j in range(size2):
                 idx = i*size+j  # ith tfrec * num_img per tfrec as the start of this iteration
-                image = get_image(raster_paths[idx], cfg['channel'], cfg['clip_thresh'])
+                image = get_image(raster_paths[idx], cfg['channel'])
                 image_serial = serialize_image(image, cfg['out_precision'])
 
                 label, label_gdf = get_label(raster_paths[idx], vector_paths[idx])
