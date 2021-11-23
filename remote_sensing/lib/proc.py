@@ -82,14 +82,21 @@ def hist_clip(image, thresh):
         last idx of hist where pixel counts below thresh -> high_idx
     returns: clipped image 
     """
-    hist, bin = np.histogram(image, bins=256,
+    bins = 256
+    hist, bin = np.histogram(image, bins=bins,
                              range=(np.nanmin(image),np.nanmax(image)))
     # returns index where condition is true
     idx_limit = np.argwhere(hist>thresh)
-    low_idx = idx_limit[0][0]
-    high_idx = idx_limit[-1][0]
-    # get low and high pixel values
-    low = bin[low_idx]
-    high = bin[high_idx]
-    # clip based on low and high limit
-    return np.clip(image, a_min=low, a_max=high)
+    # how far away the lowest hist_idx > thresh is from idx of hist_peak
+    peak = np.argmax(hist)
+    dif = peak-idx_limit[0][0]
+    if dif>int(bins/2):
+        return hist_clip(image, thresh+80)
+    else:
+        low_idx = idx_limit[0][0]
+        high_idx = idx_limit[-1][0]
+        # get low and high pixel values
+        low = bin[low_idx]
+        high = bin[high_idx]
+        # clip based on low and high limit
+        return np.clip(image, a_min=low, a_max=high)
