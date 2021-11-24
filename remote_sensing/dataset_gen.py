@@ -46,10 +46,14 @@ for i,to in enumerate(time_orient):
     timestamp = to[:-2]
     orient = to[-1]
 
+    start_proc = time.time()
     # process SAR
     out_fn = 'output.tif'  # f'{to}.tif'  # give specific output
     sar_preproc = SarPreproc(cfg, timestamp, cfg["in_dir"], cfg["out_dir"], out_fn)
     sar_preproc()
+    
+    end_proc = time.time()
+    print(f'processing complete in {(end_proc-start_proc):.1f}s')
 
     print(f'creating tiles')
     # tile raster and vector

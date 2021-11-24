@@ -3,6 +3,7 @@ import solaris.vector_tile as vector_tile
 from shapely.geometry import box
 import os
 import geopandas as gpd
+import time
 
 def get_label_gdf(split, in_dir):
     """split: str. 'train', 'val', 'test'
@@ -62,7 +63,7 @@ def raster_vector_tiling(cfg, labels, bounds, timestamp, orient, in_path, out_pa
             cfg["stride"]
         )
 
-        print(f'tiling {split} split..')
+        start = time.time()
         # tile the raster
         raster_tiler = raster_tile.RasterTiler(dest_dir=os.path.join(out_path,'raster'), 
                                        src_tile_size=(640, 640),
@@ -81,6 +82,9 @@ def raster_vector_tiling(cfg, labels, bounds, timestamp, orient, in_path, out_pa
         
         raster_dict[split] = raster_tiler
         vector_dict[split] = vector_tiler
+        
+        end = time.time()
+        print(f'finished {split} split in {(end-start):.1f}s')
     
     # return for debugging
     return raster_dict, vector_dict
