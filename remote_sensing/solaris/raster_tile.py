@@ -133,6 +133,7 @@ class RasterTiler(object):
         self.tile_paths = []  # retains the paths of the last call to .tile()
 #        self.cog_output = cog_output
         self.verbose = verbose
+        self.tile_scheme = []
         self.stride = stride
         if self.verbose:
             print('Tiler initialized.')
@@ -201,6 +202,9 @@ class RasterTiler(object):
                 if nodata_perc < nodata_threshold:
                     dest_path = self.save_tile(
                         tile_data, mask, profile, tile_id, dest_fname_base)
+                    self.save_scheme(
+                        tb, profile, tile_id, dest_fname_base
+                    )
                     self.tile_paths.append(dest_path)
                     new_tile_bounds.append(tb)
                     tile_id += 1
@@ -425,6 +429,12 @@ class RasterTiler(object):
                 profile.update(count=tile_data.shape[0])
 
             yield tile_data, mask, profile, tb
+
+    def save_scheme(self, tb, profile, i, dest_fname_base=None):
+        # save tile_scheme to reconstruct tiling
+        tile_id = str(i).zfill(4)  # give zero padding for easier sorting
+        dest_fname = '{}_{}.tif'.format(dest_fname_base, tile_id)
+        self.tile_scheme.append([dest_fname, tb, profile])
 
     def save_tile(self, tile_data, mask, profile, i, dest_fname_base=None):
         """Save a tile created by ``Tiler.tile_generator()``."""
