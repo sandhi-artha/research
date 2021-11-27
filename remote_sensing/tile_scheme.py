@@ -23,6 +23,28 @@ def load_scheme(cfg, timestamp, orient, split):
         scheme = pickle.load(f)
     return scheme
 
+def parallel_tile_generator(scheme, slc_in, raster_dir):
+    # used up to 350MB ram each proc
+    src = rs.open(slc_in)
+    dest_fname,tb,profile = scheme
+    # get window using tile resolution
+    window = windows.from_bounds(
+        *tb, transform=src.transform,
+        width=640,
+        height=640)
+
+    # crop main raster using window
+    tile_data = src.read(window=window, boundless=True, fill_value=src.nodata)
+
+    # save tile_raster
+    fn_path = os.path.join(raster_dir, dest_fname)
+    with rs.open(fn_path, 'w', **profile) as dest:
+        for band in range(1, profile['count'] + 1):
+            dest.write(tile_data[band-1, :, :], band)
+        dest.close()
+
+    src.close()
+
 def simple_tile_generator(in_raster_path, out_path, scheme, src_tile_size):
     """snippet from raster_tile.tile_generator
     made for specific settings
