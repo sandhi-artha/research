@@ -48,7 +48,14 @@ def get_labels_bounds(label_dir):
 
     return labels, bounds
 
-def save_tile_scheme(out_path, timestamp, orient, split, tiler):
+def save_tile_scheme(cfg, timestamp, orient, split, tiler):
+    """tile_schemes are unique depending on stride
+    a pickle is save for every timestamp and each of its split
+    """
+    out_path = os.path.join(cfg['out_dir'], f"s{cfg['stride']}", 'tile_scheme')
+    if not os.path.isdir(out_path):
+        os.makedirs(out_path)
+
     fn = '{}_{}_{}.pickle'.format(timestamp, orient, split)
     fn_path = os.path.join(out_path, fn)
     with open(fn_path, 'wb') as f:
@@ -59,6 +66,7 @@ def raster_vector_tiling(cfg, labels, bounds, timestamp, orient, in_path, out_pa
     """
     raster_dict = {}
     vector_dict = {}
+    vector_save_path = os.path.join(cfg['out_dir'], f"s{cfg['stride']}", 'vector')
     
     for split in ['train','val','test']:
         fn = '{}_{}_o{}_{}_{}_s{}'.format(
@@ -80,10 +88,10 @@ def raster_vector_tiling(cfg, labels, bounds, timestamp, orient, in_path, out_pa
         
         raster_tiler.tile(in_path, dest_fname_base=fn, nodata_threshold=0.5)
         print('saving scheme')
-        save_tile_scheme(out_path, timestamp, orient, split, raster_tiler)
+        save_tile_scheme(cfg, timestamp, orient, split, raster_tiler)
 
         # use created tiles for vector tiling
-        vector_tiler = vector_tile.VectorTiler(dest_dir=os.path.join(out_path,'vector'),
+        vector_tiler = vector_tile.VectorTiler(dest_dir=vector_save_path,
                                                super_verbose=cfg["verbose"])
         
         vector_tiler.tile(labels[split], tile_bounds=raster_tiler.tile_bounds,
