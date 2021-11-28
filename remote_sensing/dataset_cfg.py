@@ -10,7 +10,7 @@ cfg = {
     'stride'        : 0, # 0, 80 unit in px
     'out_dir'       : '../../dataset/sensor', # '../../sensor',  # where the tiles will be stored
     'label_dir'     : '../../dataset/spacenet6-challenge/expanded/exp_geojson_buildings', # '../../expanded/geojson_buildings',  
-    'load_tile'     : 1,  # 1 means load from tile_scheme folder instead of generating from scratch
+    'load_tile'     : 0,  # 1 means load from tile_scheme folder instead of generating from scratch
     'verbose'       : 0,  # 1 for all info, 2 for necessary tiling
     # post-tiling
     'tfrec_dir'     : 'tfrecord',   # folder to save tfrecords, change with post-tile versions
