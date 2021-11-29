@@ -11,7 +11,8 @@ from sar_preproc import SarPreproc
 from tile_scheme import parallel_tile_generator
 
 def create_s_fn():
-    full_raster_path = '../../dataset/sensor/base/raster'
+    # full_raster_path = '../../dataset/sensor/base/raster'
+    full_raster_path = os.path.join(cfg["out_dir"], 'base', 'raster')
     s_train_fn = os.listdir(full_raster_path)
     # filter only 'train'
     s_train_fn = [fn for fn in s_train_fn if 'train' in fn]
@@ -58,8 +59,10 @@ def create_s_scheme():
     with open('s_list.pickle', 'rb') as f:
         s_list = pickle.load(f)
 
-    full_sch_dir = '../../dataset/sensor/s0/tile_scheme'
-    save_sch_dir = '../../dataset/sensor/s0/s_tile_scheme'
+    # full_sch_dir = '../../dataset/sensor/s0/tile_scheme'
+    full_sch_dir = os.path.join(cfg["out_dir"], f's{cfg["stride"]}', 'tile_scheme')
+    # save_sch_dir = '../../dataset/sensor/s0/s_tile_scheme'
+    save_sch_dir = os.path.join(cfg["out_dir"], f's{cfg["stride"]}', 's_tile_scheme')
     train_sch_path = os.listdir(full_sch_dir)
     train_sch_path = [sch for sch in train_sch_path if 'train' in sch]
 
@@ -96,7 +99,7 @@ if __name__=='__main__':
     if not os.path.isdir(save_path):
         os.makedirs(save_path)
 
-    s_scheme_dir = '../../dataset/sensor/s0/s_tile_scheme'
+    s_scheme_dir = os.path.join(cfg["out_dir"], f's{cfg["stride"]}', 's_tile_scheme')
     timestamps = os.listdir(s_scheme_dir)
     with timebudget('25% train tiling'):
         for i, timestamp in enumerate(timestamps):
@@ -114,10 +117,14 @@ if __name__=='__main__':
 
             schemes = []
             for tile_scheme in tile_schemes:
-                schemes.append((tile_scheme, proc_slc_path, save_path))
+                # for serial tiling
+                parallel_tile_generator(tile_scheme, proc_slc_path, save_path)
+                # for parallel
+                # schemes.append((tile_scheme, proc_slc_path, save_path))
 
-            n_tile = len(tile_schemes)
-            n_proc = int(ceil(n_tile/2))
-            print(f'tiling with {n_proc} process')
-            proc_pool = Pool(n_proc)
-            proc_pool.starmap(parallel_tile_generator, schemes)
+            # # for parallel tiling
+            # n_tile = len(tile_schemes)
+            # n_proc = int(ceil(n_tile/2))
+            # print(f'tiling with {n_proc} process')
+            # proc_pool = Pool(n_proc)
+            # proc_pool.starmap(parallel_tile_generator, schemes)
