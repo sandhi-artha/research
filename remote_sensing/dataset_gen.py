@@ -84,7 +84,7 @@ if __name__=='__main__':
                     for el in scheme:
                         schemes.append((el, proc_slc_path, save_path))
                 
-                print(len(schemes))
+                # print(len(schemes))
                 proc_pool = Pool(8)
                 run_parallel_ops(parallel_tile_generator, schemes, proc_pool)
                 # load_raster_vector_tiling(cfg, timestamp, orient, proc_slc_path, save_path)
