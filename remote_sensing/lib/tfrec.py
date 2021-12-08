@@ -41,7 +41,7 @@ def get_tile_paths(cfg, split, shuffle=False):
     for rp in raster_paths:
         vp = rp.replace('raster', vect_str)
         vp = vp.replace('tif','geojson')
-        vp = vp.replace(cfg["name"], f's{cfg["stride"]}')
+        vp = vp.replace(cfg["name"], f's{cfg["stride"]}', 1)
         vector_paths.append(vp)
 
     return raster_paths, vector_paths
@@ -78,6 +78,9 @@ def serialize_image(image, out_precision=32):
     elif out_precision==16:
         dtype = tf.uint16
         image = tf.cast(image*(2**16 - 1), dtype=dtype)
+        # dtype = tf.bfloat16
+        # image = tf.cast(np.nan_to_num(image, nan=0.0), dtype=dtype)
+
     else:
         dtype = tf.float32
         image = tf.cast(np.nan_to_num(image, nan=0.0), dtype=dtype)
@@ -253,9 +256,7 @@ def create_tfrecord_parallel(proc_idx, base_fn, split, cfg):
             example = tf.train.Example(features=tf.train.Features(feature=feature))
             writer.write(example.SerializeToString())
             
-            if j%50==0:
-                print(f'{j} / {size2}')
-        pass
+            # if j%50==0: print(f'{j} / {size2}')
 
 
 def read_tfrecord(serialized_example):
