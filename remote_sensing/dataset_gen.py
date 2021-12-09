@@ -22,78 +22,90 @@ import os
 # import glob
 import json
 import pickle
-import time
-import sys
-from multiprocessing import Pool
+from multiprocessing import Pool, current_process
 
 from timebudget import timebudget
 
-from dataset_cfg import cfg
-# check save path exist or not to prevent overwritting valuable data
+from dataset_cfg import cfg, check_path, print_cfg
 save_path = os.path.join(cfg["out_dir"], cfg["name"])
-if os.path.isdir(save_path):
-    user_in = input(f'directory to save: {save_path}, already exist and might contain data, proceed? (y/n)\n')
-    if user_in == 'n':
-        print('terminating')
-        sys.exit()
-    elif user_in == 'y':
-        print('proceeding')
-    else:
-        print('only accept "y" or "n", terminating')
-        sys.exit()
-
 
 from sar_preproc import SarPreproc
-from tile_gen import get_labels_bounds, raster_vector_tiling
-from tile_scheme import load_raster_vector_tiling, load_scheme, parallel_tile_generator
+from tile_gen import raster_vector_tiling, load_scheme, parallel_tile_generator
 # import lib.tfrec as tfrec
 
-def run_parallel_ops(operation, input, pool):
-    pool.starmap(operation, input)
+
+def run_parallel_op(ops, args, num_proc, debug=False):
+    """determines parallel or serial ops by num_proc
+    ops  : function
+    args : list of tuples,
+        each element of list will be fed to ops
+    num_proc : int,
+        how many process to create
+    debug : bool,
+        if True, gives 1 arg to each num_proc, just for testing
+    """
+    if debug: args = args[:num_proc]
+    if num_proc == 1:  # serial, feed all args one by one
+        for arg in args: ops(*arg)
+    else:  # parallel, let Pool divide args evenly to each proc
+        proc_pool = Pool(num_proc)
+        proc_pool.starmap(ops, args)
+
+def pre_proc_tiling(timestamp, i, tot):
+    print(f'processing raster {timestamp}.. {i} of {tot}')
+    orient = cfg['orient']
+
+    if cfg['sar_proc'] > 1:  # if multiproc, write output for each proc so they don't colide
+        proc_id = current_process()._identity[0]
+        out_fn = f'output_{proc_id}.tif'
+    else:
+        out_fn = 'output.tif'
+
+    # process SAR
+    sar_preproc = SarPreproc(cfg, timestamp, cfg["in_dir"], cfg["out_dir"], out_fn)
+    with timebudget('SAR PRE-PROC'): sar_preproc()
+    
+    # tile raster and vector
+    proc_slc_path = os.path.join(cfg["out_dir"], out_fn)  # output.tif path
+    with timebudget('TILING'):
+        if cfg['load_scheme']:
+            args = []
+            for split in cfg['splits']:  # combining schemes to list of args
+                schemes = load_scheme(cfg, timestamp, orient, split)
+                for scheme in schemes:
+                    args.append((scheme, proc_slc_path, save_path))
+            
+            run_parallel_op(parallel_tile_generator, args, cfg['tile_proc'])
+
+        else:
+            _, _ = raster_vector_tiling(cfg, timestamp, orient, proc_slc_path, save_path)
+
 
 if __name__=='__main__':
-    # load all timestamps and their sar orientation
-    with open('timestamp_orientation.pickle','rb') as f:
-        time_orient = pickle.load(f)
+    # check save path exist or not to prevent overwritting valuable data
+    check_path()
+    print_cfg()
 
-    # split dataset based on each label split
-    print('loading labels')
-    labels, bounds = get_labels_bounds(cfg["label_dir"])
-    print(f'labels loaded')
+    # load slc timestamps from pickle, result of dataset_selector.py
+    sample_fn = 'sample_{}_{}.pickle'.format(
+        int(cfg['perc_data']*100), cfg['orient'])
 
-    # loop through timestamps
+    with open(sample_fn, 'rb') as f:
+        timestamps = pickle.load(f)
+
+    # add idx and len for add arguments in parallel
+    args = [(ts,i,len(timestamps)) for i,ts in enumerate(timestamps)]
+
     with timebudget('PRE-PROC + TILING'):
-        for i,to in enumerate(time_orient[70:]):
-            print(f'processing raster {to}.. {i+70} of {len(time_orient)}')
-            timestamp = to[:-2]
-            orient = to[-1]
+        run_parallel_op(pre_proc_tiling, args, cfg['sar_proc'], debug=True)
+    
+    cfg_fn = os.path.join(cfg['out_dir'], cfg['name'], 'raster', 'cfg.json')
+    with open(cfg_fn, 'w') as f: json.dump(cfg, f)
+    print('cfg saved!')
 
-            # process SAR
-            out_fn = 'output.tif'  # f'{to}.tif'  # give specific output
-            sar_preproc = SarPreproc(cfg, timestamp, cfg["in_dir"], cfg["out_dir"], out_fn)
-            with timebudget('SAR PRE-PROC'): sar_preproc()
-            
-            # tile raster and vector
-            proc_slc_path = os.path.join(cfg["out_dir"], out_fn)  # output.tif path
-            if cfg['load_tile']:
-                print('loading tiles from scheme')
-                # combining schemes
-                schemes = []
-                for split in ['train','val','test']:
-                    scheme = load_scheme(cfg, timestamp, orient, split)
-                    for el in scheme:
-                        schemes.append((el, proc_slc_path, save_path))
-                
-                # print(len(schemes))
-                proc_pool = Pool(8)
-                run_parallel_ops(parallel_tile_generator, schemes, proc_pool)
-                # load_raster_vector_tiling(cfg, timestamp, orient, proc_slc_path, save_path)
 
-            else:
-                print(f'creating tiles')
-                with timebudget('TILING SLC'):
-                    raster_dict, vector_dict = raster_vector_tiling(
-                        cfg, labels, bounds, timestamp, orient, proc_slc_path, save_path)
+
+
 
 # end of code
 
