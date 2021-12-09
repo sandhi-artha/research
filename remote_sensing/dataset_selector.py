@@ -67,9 +67,10 @@ if __name__=='__main__':
     # get sample indexes
     s_idx = get_sample_in_clusters(n, mid_arr)
 
-    # grab sample slc_paths
-    sample_slc_paths = [slc_paths[i] for i in s_idx]
+    # grab sample timestamps
+    sample_timestamps = [timestamps[i] for i in s_idx]
+
     out_fn = f'sample_{n}_{orient}.pickle'
     print(f'saving to {out_fn}')
     with open(out_fn, 'wb') as f:
-        pickle.dump(sample_slc_paths, f)
+        pickle.dump(sample_timestamps, f)
