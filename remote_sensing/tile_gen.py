@@ -1,9 +1,13 @@
+import os
+import pickle
+
+import rasterio as rs
+import geopandas as gpd
+from rasterio import windows
+from shapely.geometry import box
+
 import solaris.raster_tile as raster_tile
 import solaris.vector_tile as vector_tile
-from shapely.geometry import box
-import os
-import geopandas as gpd
-import pickle
 
 def get_label_gdf(split, in_dir):
     """split: str. 'train', 'val', 'test'
@@ -49,7 +53,10 @@ def get_labels_bounds(label_dir):
 
 def save_tile_scheme(cfg, timestamp, orient, split, tiler):
     """tile_schemes are unique depending on stride
-    a pickle is save for every timestamp and each of its split
+    a pickle is save for every timestamp and each of its split, contains:
+        [tile_names, tile_bounds, tile_transform]
+
+    this {timestamp}_s{stride}.pickle can be used to quickly create tiling
     """
     out_path = os.path.join(cfg['out_dir'], f"s{cfg['stride']}", 'tile_scheme')
     if not os.path.isdir(out_path):
@@ -60,9 +67,47 @@ def save_tile_scheme(cfg, timestamp, orient, split, tiler):
     with open(fn_path, 'wb') as f:
         pickle.dump(tiler.tile_scheme, f)
 
-def raster_vector_tiling(cfg, labels, bounds, timestamp, orient, in_path, out_path):
-    """creates
+
+def load_scheme(cfg, timestamp, orient, split):
+    """scheme contains [name, bound, profile] for each filtered tiles (above nodata_threshold)
     """
+    out_path = os.path.join(cfg['out_dir'], f"s{cfg['stride']}", 'tile_scheme')
+    fn = '{}_{}_{}.pickle'.format(timestamp, orient, split)
+    fn_path = os.path.join(out_path, fn)
+    with open(fn_path, 'rb') as f:
+        scheme = pickle.load(f)
+    return scheme
+
+def parallel_tile_generator(scheme, slc_in, out_dir):
+    """used boundaries from scheme for tiling raster only
+    """
+    # used up to 350MB ram each proc
+    src = rs.open(slc_in)
+    dest_fname,tb,profile = scheme
+    # get window using tile resolution
+    window = windows.from_bounds(
+        *tb, transform=src.transform,
+        width=640,
+        height=640)
+
+    # crop main raster using window
+    tile_data = src.read(window=window, boundless=True, fill_value=src.nodata)
+
+    # save tile_raster
+    fn_path = os.path.join(out_dir, 'raster', dest_fname)
+    with rs.open(fn_path, 'w', **profile) as dest:
+        for band in range(1, profile['count'] + 1):
+            dest.write(tile_data[band-1, :, :], band)
+        dest.close()
+
+    src.close()
+
+
+def raster_vector_tiling(cfg, timestamp, orient, slc_path, out_dir):
+    """create raster and vector tiles using Tiler from solaris
+    """
+    labels, bounds = get_labels_bounds(cfg["label_dir"])
+
     raster_dict = {}
     vector_dict = {}
     vector_save_path = os.path.join(cfg['out_dir'], f"s{cfg['stride']}", 'vector')
@@ -78,14 +123,13 @@ def raster_vector_tiling(cfg, labels, bounds, timestamp, orient, in_path, out_pa
         )
 
         # tile the raster
-        raster_tiler = raster_tile.RasterTiler(dest_dir=os.path.join(out_path,'raster'), 
+        raster_tiler = raster_tile.RasterTiler(dest_dir=os.path.join(out_dir,'raster'), 
                                        src_tile_size=(640, 640),
                                        aoi_boundary=bounds[split],
                                        verbose=cfg["verbose"],
                                        stride=(cfg["stride"],cfg["stride"]))
         
-        raster_tiler.tile(in_path, dest_fname_base=fn, nodata_threshold=0.5)
-        print('saving scheme')
+        raster_tiler.tile(slc_path, dest_fname_base=fn, nodata_threshold=0.5)
         save_tile_scheme(cfg, timestamp, orient, split, raster_tiler)
 
         # use created tiles for vector tiling
