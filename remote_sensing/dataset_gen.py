@@ -4,22 +4,7 @@
 # read saved raster and do tiling according to regions
 # output tile name: sensor_20190823162315_20190823162606_base_train_100_0016.tif
 # project_ timestamp_ dsscheme_ split_ coverage_ tile_id
-
-
-# import matplotlib.pyplot as plt
-# import numpy as np
 import os
-
-# import rasterio as rs
-# from rasterio import plot
-# from rasterio import features as feat  # convert to mask
-
-# import geopandas as gpd
-
-# from shapely.geometry import box
-# import pandas as pd
-
-# import glob
 import json
 import pickle
 from multiprocessing import Pool, current_process
@@ -33,6 +18,12 @@ from sar_preproc import SarPreproc
 from tile_gen import raster_vector_tiling, load_scheme, parallel_tile_generator
 # import lib.tfrec as tfrec
 
+def load_timestamps(perc):
+    """load slc timestamps from pickle, result of dataset_selector.py"""
+    sample_fn = 'sample_{}_{}.pickle'.format(int(perc*100), cfg['orient'])
+    with open(sample_fn, 'rb') as f:
+        timestamps = pickle.load(f)
+    return timestamps
 
 def run_parallel_op(ops, args, num_proc, debug=False):
     """determines parallel or serial ops by num_proc
@@ -44,7 +35,9 @@ def run_parallel_op(ops, args, num_proc, debug=False):
     debug : bool,
         if True, gives 1 arg to each num_proc, just for testing
     """
-    if debug: args = args[:num_proc]
+    if debug:
+        print('DEBUGGING..')
+        args = args[:num_proc]
     if num_proc == 1:  # serial, feed all args one by one
         for arg in args: ops(*arg)
     else:  # parallel, let Pool divide args evenly to each proc
@@ -83,63 +76,16 @@ def pre_proc_tiling(timestamp, i, tot):
 
 if __name__=='__main__':
     # check save path exist or not to prevent overwritting valuable data
-    check_path()
+    check_path(save_path)
     print_cfg()
 
-    # load slc timestamps from pickle, result of dataset_selector.py
-    sample_fn = 'sample_{}_{}.pickle'.format(
-        int(cfg['perc_data']*100), cfg['orient'])
-
-    with open(sample_fn, 'rb') as f:
-        timestamps = pickle.load(f)
-
-    # add idx and len for add arguments in parallel
+    timestamps = load_timestamps(cfg['perc_data'])
+    # add idx and len for arguments in parallel proc
     args = [(ts,i,len(timestamps)) for i,ts in enumerate(timestamps)]
 
     with timebudget('PRE-PROC + TILING'):
-        run_parallel_op(pre_proc_tiling, args, cfg['sar_proc'], debug=True)
+        run_parallel_op(pre_proc_tiling, args, cfg['sar_proc'], debug=1)
     
     cfg_fn = os.path.join(cfg['out_dir'], cfg['name'], 'raster', 'cfg.json')
     with open(cfg_fn, 'w') as f: json.dump(cfg, f)
     print('cfg saved!')
-
-
-
-
-
-# end of code
-
-
-
-
-
-
-
-
-# CLOSE PARALEL, wait all process to finish
-
-# # write tfrecords
-# start = time.time()
-# in_path = tile_out_path = os.path.join(cfg["out_dir"], cfg["name"])
-# for split in ['train','val','test']:
-#     # grab and shuffle [raster, vector] file paths
-#     fp = tfrec.get_tile_paths(in_path, split, shuffle=True, perc_data=cfg["perc_data"])
-    
-#     # create save directory if not exist
-#     base_dir = os.path.join(cfg["out_dir"], cfg["name"], cfg["tfrec_dir"])
-#     if not os.path.isdir(base_dir):
-#         os.makedirs(base_dir)
-    
-#     # START PARALEL BASED ON fp indexes
-#     # name of tfrec file
-#     base_fn = os.path.join(base_dir, split)
-#     tfrec.create_tfrecord(*fp, cfg, base_fn, cfg["tfrec_size"])
-
-# end = time.time()
-# print(f'tfrecords created in {(end-start):.1f}s')
-
-# cfg_fn = os.path.join(base_dir, 'cfg.json')
-# with open(cfg_fn, 'w') as f:
-#     json.dump(cfg, f)
-
-# print('config saved!')
