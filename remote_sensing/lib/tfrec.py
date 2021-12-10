@@ -23,7 +23,7 @@ def get_tile_paths(cfg, post_cfg, split, shuffle=False):
         list of all raster paths and vector paths for given split
     """
     if split=='train':
-        timestamps = load_timestamps(cfg['perc_data'])
+        timestamps = load_timestamps(post_cfg['perc_data'])
     else:  # for val and train, take all SLC timestamps
         timestamps = load_timestamps(1)
     
