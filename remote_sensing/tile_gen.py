@@ -112,7 +112,7 @@ def raster_vector_tiling(cfg, timestamp, orient, slc_path, out_dir):
     vector_dict = {}
     vector_save_path = os.path.join(cfg['out_dir'], f"s{cfg['stride']}", 'vector')
     
-    for split in ['train','val','test']:
+    for split in cfg['splits']:
         fn = '{}_{}_o{}_{}_{}_s{}'.format(
             cfg["project"],
             timestamp,

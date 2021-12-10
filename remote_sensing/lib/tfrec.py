@@ -1,42 +1,43 @@
 import os
 import glob
-import numpy as np
 import random
+
+import numpy as np
 import geopandas as gpd
 import tensorflow as tf
 import rasterio as rs
 from rasterio import features as feat
 
+# why these imports work?
 from solaris.vector_mask import mask_to_poly_geojson
 from solaris.core import save_empty_geojson
+from dataset_gen import load_timestamps
 from .proc import hist_clip, to_hwc, normalize
 
 
-def get_tile_paths(cfg, split, shuffle=False):
+def get_tile_paths(cfg, post_cfg, split, shuffle=False):
     """
-    in_path : str
-        path where tiles are stored (has [raster, vector])
     split : str
         'train', 'val', or 'test'
-    shuffle : bool
-        shuffle using a seed
-    perc_data : float [0,1]
-        only applies to train split, percentage of examples to be loaded
     returns : [raster_paths, vector_paths]
         list of all raster paths and vector paths for given split
     """
-    path = os.path.join(cfg["out_dir"], cfg["name"], 'raster', f'*{split}*.tif')
-    raster_paths = glob.glob(path)
-    raster_paths.sort()
-
-    if shuffle:
-        random.Random(17).shuffle(raster_paths)
     if split=='train':
-        tot_len = len(raster_paths)
-        per_len = int(np.ceil(tot_len*cfg["perc_data"]))
-        raster_paths = raster_paths[:per_len]
-
-    vect_str = 'vector_fix' if cfg["load_fix"] else 'vector'
+        timestamps = load_timestamps(cfg['perc_data'])
+    else:  # for val and train, take all SLC timestamps
+        timestamps = load_timestamps(1)
+    
+    raster_paths = []
+    for ts in timestamps:
+        path = os.path.join(cfg["out_dir"], cfg["name"], 'raster', f'*{ts}*{split}*.tif')
+        ts_paths = glob.glob(path)
+        for ts_path in ts_paths:
+            raster_paths.append(ts_path)
+    
+    raster_paths.sort()
+    if shuffle: random.Random(17).shuffle(raster_paths)
+    
+    vect_str = 'vector_fix' if post_cfg["load_fix"] else 'vector'
     vector_paths = []
     for rp in raster_paths:
         vp = rp.replace('raster', vect_str)
@@ -222,12 +223,12 @@ def create_tfrecord(raster_paths, vector_paths, cfg, base_fn, size):
                 if j%50==0:
                     print(f'{j} / {size2}')
 
-def create_tfrecord_parallel(proc_idx, base_fn, split, cfg):
+def create_tfrecord_parallel(proc_idx, base_fn, split, cfg, post_cfg):
     
     """divides task between process based on num of tfrecords of a given split
     """
-    raster_paths, vector_paths = get_tile_paths(cfg, split, shuffle=True)
-    size = cfg["tfrec_size"]
+    raster_paths, vector_paths = get_tile_paths(cfg, post_cfg, split, shuffle=True)
+    size = post_cfg["tfrec_size"]
     tot_ex = len(raster_paths)  # total examples
     tot_tf = int(np.ceil(tot_ex/size))  # total tfrecords
     
@@ -238,10 +239,10 @@ def create_tfrecord_parallel(proc_idx, base_fn, split, cfg):
     with tf.io.TFRecordWriter(fn) as writer:
         for j in range(size2):
             idx = proc_idx*size+j  # ith tfrec * num_img per tfrec as the start of this iteration
-            image = get_image(raster_paths[idx], cfg["channel"])
-            image_serial = serialize_image(image, cfg["out_precision"])
+            image = get_image(raster_paths[idx], post_cfg["channel"])
+            image_serial = serialize_image(image, post_cfg["out_precision"])
 
-            label, label_gdf = get_label(raster_paths[idx], vector_paths[idx], cfg["load_fix"])
+            label, label_gdf = get_label(raster_paths[idx], vector_paths[idx], post_cfg["load_fix"])
             label_serial = serialize_label(label)
 
             fn = os.path.basename(raster_paths[idx]).split('.')[0]
