@@ -18,7 +18,7 @@ will filter tiles based selected SLC stripe
 
 def get_tot_tf(cfg, split):
     if split=='train':
-        timestamps = load_timestamps(cfg['perc_data'])
+        timestamps = load_timestamps(post_cfg['perc_data'])
     else:  # for val and train, take all SLC timestamps
         timestamps = load_timestamps(1)
 
@@ -28,7 +28,7 @@ def get_tot_tf(cfg, split):
         tot_ex += len(glob.glob(path))    # total examples
 
     tot_tf = int(ceil(tot_ex/post_cfg["tfrec_size"]))  # total tfrecords
-    print(f'creating {tot_tf} tfrecs out of {tot_ex} tiles')
+    print(f'creating {tot_tf} tfrecs out of {tot_ex} {split} tiles')
     return tot_tf
 
 

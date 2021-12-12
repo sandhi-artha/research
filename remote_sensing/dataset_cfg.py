@@ -26,20 +26,29 @@ cfg = {
     'verbose'       : 0,            # (int) 0 minimum logs, 1 for all info, 2 for necessary tiling
 }
 
+rdc = 1
+
 post_cfg = {
     # post-tiling - used to create tfrecord
     # will read cfg from tile_dir instead of using cfg above
     'tile_dir'      : '../../dataset/sensor/base/raster',  # where to load tiles and cfg for tfrec
-    'splits'        : ['train'],  # which split to create tfrecord
-    'tfrec_dir'     : 'tfrecords',   # folder to save tfrecords, change with post-tile versions
-    'tfrec_proc'    : 2,            # num of process used, 1 for serial
+    'perc_data'     : .2,           # (float) percentage of slc stripes to be created as tfrec. for 'val' and 'test' it will always be 1.0
+    'splits'        : ['train', 'val', 'test'],  # which split to create tfrecord
+    'tfrec_dir'     : 'tfrec_20_8',   # folder to save tfrecords, change with post-tile versions
+    'tfrec_proc'    : 4,            # num of process used, 1 for serial
     'load_fix'      : 0,            # 1 means load from vector_fix instead of vector
     'channel'       : [1,4,3],
-    'out_precision' : 32,            # 8, 16 or 32
-    'tfrec_size'    : 7,          # num examples per tfrec
+    'out_precision' : 8,            # 8, 16 or 32
+    'tfrec_size'    : 100,          # num examples per tfrec
     'rotation'      : 0,
     'flip'          : 0,
 }
+
+if rdc:  # when using remote computer
+    cfg['in_dir']       = '../../expanded-dataset'
+    cfg['out_dir']      = '../../sensor'
+    cfg['label_dir']    = '../../expanded/geojson_buildings'
+    post_cfg['tile_dir']= '../../sensor/base/raster'
 
 def check_path(save_path):
     if os.path.isdir(save_path):
